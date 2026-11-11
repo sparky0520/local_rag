@@ -1,0 +1,1589 @@
+{
+  "timestamp": 1794409280.479659,
+  "total_queries": 36,
+  "corpus_chunks": 42,
+  "k_values": [
+    1,
+    3,
+    5,
+    10
+  ],
+  "modes": {
+    "bm25": {
+      "mode": "bm25",
+      "display_name": "BM25 (Keyword Only)",
+      "recall_at_k": {
+        "1": 0.9583333333333334,
+        "3": 1.0,
+        "5": 1.0,
+        "10": 1.0
+      },
+      "precision_at_k": {
+        "1": 0.9722222222222222,
+        "3": 0.3425925925925926,
+        "5": 0.2055555555555556,
+        "10": 0.1027777777777778
+      },
+      "mrr": 0.9861111111111112,
+      "map_score": 0.9861111111111112,
+      "ndcg_at_k": {
+        "1": 0.9722222222222222,
+        "3": 0.9897480487103183,
+        "5": 0.9897480487103183,
+        "10": 0.9897480487103183
+      },
+      "latency_ms_mean": 0.08377313911801644,
+      "latency_ms_p50": 0.08191650158551056,
+      "latency_ms_p95": 0.1111347501137061,
+      "latency_ms_p99": 0.1553284990222891,
+      "category_recall_at_5": {
+        "keyword_exact": 1.0,
+        "semantic_concept": 1.0,
+        "hybrid_balanced": 1.0
+      }
+    },
+    "dense": {
+      "mode": "dense",
+      "display_name": "Dense Embeddings Only",
+      "recall_at_k": {
+        "1": 0.875,
+        "3": 0.9722222222222222,
+        "5": 1.0,
+        "10": 1.0
+      },
+      "precision_at_k": {
+        "1": 0.8888888888888888,
+        "3": 0.3333333333333333,
+        "5": 0.2055555555555556,
+        "10": 0.1027777777777778
+      },
+      "mrr": 0.9268518518518518,
+      "map_score": 0.9268518518518518,
+      "ndcg_at_k": {
+        "1": 0.8888888888888888,
+        "3": 0.9341924931547627,
+        "5": 0.9449384044668333,
+        "10": 0.9449384044668333
+      },
+      "latency_ms_mean": 5.752291749963155,
+      "latency_ms_p50": 3.261479499997222,
+      "latency_ms_p95": 6.737041498126928,
+      "latency_ms_p99": 53.03950219749812,
+      "category_recall_at_5": {
+        "keyword_exact": 1.0,
+        "semantic_concept": 1.0,
+        "hybrid_balanced": 1.0
+      }
+    },
+    "hybrid_rrf": {
+      "mode": "hybrid_rrf",
+      "display_name": "Hybrid (RRF, k=60)",
+      "recall_at_k": {
+        "1": 0.9027777777777778,
+        "3": 1.0,
+        "5": 1.0,
+        "10": 1.0
+      },
+      "precision_at_k": {
+        "1": 0.9166666666666666,
+        "3": 0.3425925925925926,
+        "5": 0.2055555555555556,
+        "10": 0.1027777777777778
+      },
+      "mrr": 0.9537037037037036,
+      "map_score": 0.9537037037037036,
+      "ndcg_at_k": {
+        "1": 0.9166666666666666,
+        "3": 0.9656072085317476,
+        "5": 0.9656072085317476,
+        "10": 0.9656072085317476
+      },
+      "latency_ms_mean": 3.0573218051965037,
+      "latency_ms_p50": 3.0508124982588924,
+      "latency_ms_p95": 3.1868752503214637,
+      "latency_ms_p99": 3.273883548899903,
+      "category_recall_at_5": {
+        "keyword_exact": 1.0,
+        "semantic_concept": 1.0,
+        "hybrid_balanced": 1.0
+      }
+    },
+    "hybrid_linear": {
+      "mode": "hybrid_linear",
+      "display_name": "Hybrid (Linear, α=0.5)",
+      "recall_at_k": {
+        "1": 0.9583333333333334,
+        "3": 1.0,
+        "5": 1.0,
+        "10": 1.0
+      },
+      "precision_at_k": {
+        "1": 0.9722222222222222,
+        "3": 0.3425925925925926,
+        "5": 0.2055555555555556,
+        "10": 0.1027777777777778
+      },
+      "mrr": 0.9814814814814814,
+      "map_score": 0.9814814814814814,
+      "ndcg_at_k": {
+        "1": 0.9722222222222222,
+        "3": 0.9861111111111112,
+        "5": 0.9861111111111112,
+        "10": 0.9861111111111112
+      },
+      "latency_ms_mean": 3.0564617499193343,
+      "latency_ms_p50": 3.034604000276886,
+      "latency_ms_p95": 3.2180204998439876,
+      "latency_ms_p99": 3.2540540498303017,
+      "category_recall_at_5": {
+        "keyword_exact": 1.0,
+        "semantic_concept": 1.0,
+        "hybrid_balanced": 1.0
+      }
+    }
+  },
+  "query_details": [
+    {
+      "query_id": "Q01",
+      "query": "What are the configuration bounds for ELECTION_TIMEOUT_MIN_MS and HEARTBEAT_INTERVAL_MS in Raft?",
+      "category": "keyword_exact",
+      "expected_chunks": [
+        "01_raft_consensus#chunk-1"
+      ],
+      "ranks": {
+        "bm25": 1,
+        "dense": 1,
+        "hybrid_rrf": 1,
+        "hybrid_linear": 1
+      },
+      "hits_at_k": {
+        "bm25": {
+          "1": true,
+          "3": true,
+          "5": true,
+          "10": true
+        },
+        "dense": {
+          "1": true,
+          "3": true,
+          "5": true,
+          "10": true
+        },
+        "hybrid_rrf": {
+          "1": true,
+          "3": true,
+          "5": true,
+          "10": true
+        },
+        "hybrid_linear": {
+          "1": true,
+          "3": true,
+          "5": true,
+          "10": true
+        }
+      }
+    },
+    {
+      "query_id": "Q02",
+      "query": "How does the system ensure no two leaders get elected in the same term during a network split?",
+      "category": "semantic_concept",
+      "expected_chunks": [
+        "01_raft_consensus#chunk-1"
+      ],
+      "ranks": {
+        "bm25": 1,
+        "dense": 1,
+        "hybrid_rrf": 1,
+        "hybrid_linear": 1
+      },
+      "hits_at_k": {
+        "bm25": {
+          "1": true,
+          "3": true,
+          "5": true,
+          "10": true
+        },
+        "dense": {
+          "1": true,
+          "3": true,
+          "5": true,
+          "10": true
+        },
+        "hybrid_rrf": {
+          "1": true,
+          "3": true,
+          "5": true,
+          "10": true
+        },
+        "hybrid_linear": {
+          "1": true,
+          "3": true,
+          "5": true,
+          "10": true
+        }
+      }
+    },
+    {
+      "query_id": "Q03",
+      "query": "AppendEntriesRPC follower nextIndex decrement on log mismatch",
+      "category": "keyword_exact",
+      "expected_chunks": [
+        "01_raft_consensus#chunk-2"
+      ],
+      "ranks": {
+        "bm25": 1,
+        "dense": 1,
+        "hybrid_rrf": 1,
+        "hybrid_linear": 1
+      },
+      "hits_at_k": {
+        "bm25": {
+          "1": true,
+          "3": true,
+          "5": true,
+          "10": true
+        },
+        "dense": {
+          "1": true,
+          "3": true,
+          "5": true,
+          "10": true
+        },
+        "hybrid_rrf": {
+          "1": true,
+          "3": true,
+          "5": true,
+          "10": true
+        },
+        "hybrid_linear": {
+          "1": true,
+          "3": true,
+          "5": true,
+          "10": true
+        }
+      }
+    },
+    {
+      "query_id": "Q04",
+      "query": "Safely updating cluster membership without risk of overlapping majorities using transitional configurations",
+      "category": "semantic_concept",
+      "expected_chunks": [
+        "01_raft_consensus#chunk-4"
+      ],
+      "ranks": {
+        "bm25": 1,
+        "dense": 3,
+        "hybrid_rrf": 1,
+        "hybrid_linear": 1
+      },
+      "hits_at_k": {
+        "bm25": {
+          "1": true,
+          "3": true,
+          "5": true,
+          "10": true
+        },
+        "dense": {
+          "1": false,
+          "3": true,
+          "5": true,
+          "10": true
+        },
+        "hybrid_rrf": {
+          "1": true,
+          "3": true,
+          "5": true,
+          "10": true
+        },
+        "hybrid_linear": {
+          "1": true,
+          "3": true,
+          "5": true,
+          "10": true
+        }
+      }
+    },
+    {
+      "query_id": "Q05",
+      "query": "LSM_MEMTABLE_STALL_THRESHOLD and LSM_MEMTABLE_STOP_THRESHOLD backpressure limits",
+      "category": "keyword_exact",
+      "expected_chunks": [
+        "02_lsm_trees_storage#chunk-2"
+      ],
+      "ranks": {
+        "bm25": 1,
+        "dense": 1,
+        "hybrid_rrf": 1,
+        "hybrid_linear": 1
+      },
+      "hits_at_k": {
+        "bm25": {
+          "1": true,
+          "3": true,
+          "5": true,
+          "10": true
+        },
+        "dense": {
+          "1": true,
+          "3": true,
+          "5": true,
+          "10": true
+        },
+        "hybrid_rrf": {
+          "1": true,
+          "3": true,
+          "5": true,
+          "10": true
+        },
+        "hybrid_linear": {
+          "1": true,
+          "3": true,
+          "5": true,
+          "10": true
+        }
+      }
+    },
+    {
+      "query_id": "Q06",
+      "query": "Why do deletions temporarily consume additional storage instead of reclaiming disk space immediately?",
+      "category": "semantic_concept",
+      "expected_chunks": [
+        "02_lsm_trees_storage#chunk-4"
+      ],
+      "ranks": {
+        "bm25": 1,
+        "dense": 1,
+        "hybrid_rrf": 1,
+        "hybrid_linear": 1
+      },
+      "hits_at_k": {
+        "bm25": {
+          "1": true,
+          "3": true,
+          "5": true,
+          "10": true
+        },
+        "dense": {
+          "1": true,
+          "3": true,
+          "5": true,
+          "10": true
+        },
+        "hybrid_rrf": {
+          "1": true,
+          "3": true,
+          "5": true,
+          "10": true
+        },
+        "hybrid_linear": {
+          "1": true,
+          "3": true,
+          "5": true,
+          "10": true
+        }
+      }
+    },
+    {
+      "query_id": "Q07",
+      "query": "Trade-offs between LeveledCompactionStrategy and SizeTieredCompactionStrategy regarding write amplification and space amplification",
+      "category": "hybrid_balanced",
+      "expected_chunks": [
+        "02_lsm_trees_storage#chunk-3"
+      ],
+      "ranks": {
+        "bm25": 1,
+        "dense": 1,
+        "hybrid_rrf": 1,
+        "hybrid_linear": 1
+      },
+      "hits_at_k": {
+        "bm25": {
+          "1": true,
+          "3": true,
+          "5": true,
+          "10": true
+        },
+        "dense": {
+          "1": true,
+          "3": true,
+          "5": true,
+          "10": true
+        },
+        "hybrid_rrf": {
+          "1": true,
+          "3": true,
+          "5": true,
+          "10": true
+        },
+        "hybrid_linear": {
+          "1": true,
+          "3": true,
+          "5": true,
+          "10": true
+        }
+      }
+    },
+    {
+      "query_id": "Q08",
+      "query": "SkipList MemTable flush to Level 0 SSTable when memtable_size_mb is exceeded",
+      "category": "keyword_exact",
+      "expected_chunks": [
+        "02_lsm_trees_storage#chunk-0"
+      ],
+      "ranks": {
+        "bm25": 1,
+        "dense": 1,
+        "hybrid_rrf": 1,
+        "hybrid_linear": 1
+      },
+      "hits_at_k": {
+        "bm25": {
+          "1": true,
+          "3": true,
+          "5": true,
+          "10": true
+        },
+        "dense": {
+          "1": true,
+          "3": true,
+          "5": true,
+          "10": true
+        },
+        "hybrid_rrf": {
+          "1": true,
+          "3": true,
+          "5": true,
+          "10": true
+        },
+        "hybrid_linear": {
+          "1": true,
+          "3": true,
+          "5": true,
+          "10": true
+        }
+      }
+    },
+    {
+      "query_id": "Q09",
+      "query": "How does Presumed Abort optimize coordinator recovery in Two-Phase Commit?",
+      "category": "hybrid_balanced",
+      "expected_chunks": [
+        "03_distributed_transactions#chunk-2"
+      ],
+      "ranks": {
+        "bm25": 1,
+        "dense": 2,
+        "hybrid_rrf": 2,
+        "hybrid_linear": 1
+      },
+      "hits_at_k": {
+        "bm25": {
+          "1": true,
+          "3": true,
+          "5": true,
+          "10": true
+        },
+        "dense": {
+          "1": false,
+          "3": true,
+          "5": true,
+          "10": true
+        },
+        "hybrid_rrf": {
+          "1": false,
+          "3": true,
+          "5": true,
+          "10": true
+        },
+        "hybrid_linear": {
+          "1": true,
+          "3": true,
+          "5": true,
+          "10": true
+        }
+      }
+    },
+    {
+      "query_id": "Q10",
+      "query": "Preventing non-blocking reads while avoiding dirty reads using version chains and snapshot timestamps",
+      "category": "semantic_concept",
+      "expected_chunks": [
+        "03_distributed_transactions#chunk-0"
+      ],
+      "ranks": {
+        "bm25": 1,
+        "dense": 1,
+        "hybrid_rrf": 1,
+        "hybrid_linear": 1
+      },
+      "hits_at_k": {
+        "bm25": {
+          "1": true,
+          "3": true,
+          "5": true,
+          "10": true
+        },
+        "dense": {
+          "1": true,
+          "3": true,
+          "5": true,
+          "10": true
+        },
+        "hybrid_rrf": {
+          "1": true,
+          "3": true,
+          "5": true,
+          "10": true
+        },
+        "hybrid_linear": {
+          "1": true,
+          "3": true,
+          "5": true,
+          "10": true
+        }
+      }
+    },
+    {
+      "query_id": "Q11",
+      "query": "TXN_DEADLOCK_RESOLVER_KILL_YOUNGEST and Tarjan cycle-finding in Wait-For Graphs",
+      "category": "keyword_exact",
+      "expected_chunks": [
+        "03_distributed_transactions#chunk-3"
+      ],
+      "ranks": {
+        "bm25": 1,
+        "dense": 1,
+        "hybrid_rrf": 1,
+        "hybrid_linear": 1
+      },
+      "hits_at_k": {
+        "bm25": {
+          "1": true,
+          "3": true,
+          "5": true,
+          "10": true
+        },
+        "dense": {
+          "1": true,
+          "3": true,
+          "5": true,
+          "10": true
+        },
+        "hybrid_rrf": {
+          "1": true,
+          "3": true,
+          "5": true,
+          "10": true
+        },
+        "hybrid_linear": {
+          "1": true,
+          "3": true,
+          "5": true,
+          "10": true
+        }
+      }
+    },
+    {
+      "query_id": "Q12",
+      "query": "Two-Phase Commit prepare phase LockTable intents and participant abort handling",
+      "category": "hybrid_balanced",
+      "expected_chunks": [
+        "03_distributed_transactions#chunk-1"
+      ],
+      "ranks": {
+        "bm25": 1,
+        "dense": 1,
+        "hybrid_rrf": 1,
+        "hybrid_linear": 1
+      },
+      "hits_at_k": {
+        "bm25": {
+          "1": true,
+          "3": true,
+          "5": true,
+          "10": true
+        },
+        "dense": {
+          "1": true,
+          "3": true,
+          "5": true,
+          "10": true
+        },
+        "hybrid_rrf": {
+          "1": true,
+          "3": true,
+          "5": true,
+          "10": true
+        },
+        "hybrid_linear": {
+          "1": true,
+          "3": true,
+          "5": true,
+          "10": true
+        }
+      }
+    },
+    {
+      "query_id": "Q13",
+      "query": "Indirect probing Ping-Req mechanism to suppress false-positive node death declarations",
+      "category": "hybrid_balanced",
+      "expected_chunks": [
+        "04_gossip_and_failure_detection#chunk-1"
+      ],
+      "ranks": {
+        "bm25": 1,
+        "dense": 1,
+        "hybrid_rrf": 1,
+        "hybrid_linear": 1
+      },
+      "hits_at_k": {
+        "bm25": {
+          "1": true,
+          "3": true,
+          "5": true,
+          "10": true
+        },
+        "dense": {
+          "1": true,
+          "3": true,
+          "5": true,
+          "10": true
+        },
+        "hybrid_rrf": {
+          "1": true,
+          "3": true,
+          "5": true,
+          "10": true
+        },
+        "hybrid_linear": {
+          "1": true,
+          "3": true,
+          "5": true,
+          "10": true
+        }
+      }
+    },
+    {
+      "query_id": "Q14",
+      "query": "How does the cluster adaptively detect dead nodes across unreliable WAN connections without fixed timeouts?",
+      "category": "semantic_concept",
+      "expected_chunks": [
+        "04_gossip_and_failure_detection#chunk-3"
+      ],
+      "ranks": {
+        "bm25": 2,
+        "dense": 3,
+        "hybrid_rrf": 3,
+        "hybrid_linear": 3
+      },
+      "hits_at_k": {
+        "bm25": {
+          "1": false,
+          "3": true,
+          "5": true,
+          "10": true
+        },
+        "dense": {
+          "1": false,
+          "3": true,
+          "5": true,
+          "10": true
+        },
+        "hybrid_rrf": {
+          "1": false,
+          "3": true,
+          "5": true,
+          "10": true
+        },
+        "hybrid_linear": {
+          "1": false,
+          "3": true,
+          "5": true,
+          "10": true
+        }
+      }
+    },
+    {
+      "query_id": "Q15",
+      "query": "phi_accrual_threshold dynamic failure detection formula and heartbeat interval distribution",
+      "category": "keyword_exact",
+      "expected_chunks": [
+        "04_gossip_and_failure_detection#chunk-3"
+      ],
+      "ranks": {
+        "bm25": 1,
+        "dense": 1,
+        "hybrid_rrf": 1,
+        "hybrid_linear": 1
+      },
+      "hits_at_k": {
+        "bm25": {
+          "1": true,
+          "3": true,
+          "5": true,
+          "10": true
+        },
+        "dense": {
+          "1": true,
+          "3": true,
+          "5": true,
+          "10": true
+        },
+        "hybrid_rrf": {
+          "1": true,
+          "3": true,
+          "5": true,
+          "10": true
+        },
+        "hybrid_linear": {
+          "1": true,
+          "3": true,
+          "5": true,
+          "10": true
+        }
+      }
+    },
+    {
+      "query_id": "Q16",
+      "query": "SWIM gossip GOSSIP_SUSPECT_TIMEOUT_MS and node refutation using incarnation numbers",
+      "category": "keyword_exact",
+      "expected_chunks": [
+        "04_gossip_and_failure_detection#chunk-2"
+      ],
+      "ranks": {
+        "bm25": 1,
+        "dense": 1,
+        "hybrid_rrf": 1,
+        "hybrid_linear": 1
+      },
+      "hits_at_k": {
+        "bm25": {
+          "1": true,
+          "3": true,
+          "5": true,
+          "10": true
+        },
+        "dense": {
+          "1": true,
+          "3": true,
+          "5": true,
+          "10": true
+        },
+        "hybrid_rrf": {
+          "1": true,
+          "3": true,
+          "5": true,
+          "10": true
+        },
+        "hybrid_linear": {
+          "1": true,
+          "3": true,
+          "5": true,
+          "10": true
+        }
+      }
+    },
+    {
+      "query_id": "Q17",
+      "query": "Mathematical condition for strict linearizable consistency across replica sets",
+      "category": "semantic_concept",
+      "expected_chunks": [
+        "05_quorum_consistency#chunk-0"
+      ],
+      "ranks": {
+        "bm25": 1,
+        "dense": 1,
+        "hybrid_rrf": 1,
+        "hybrid_linear": 1
+      },
+      "hits_at_k": {
+        "bm25": {
+          "1": true,
+          "3": true,
+          "5": true,
+          "10": true
+        },
+        "dense": {
+          "1": true,
+          "3": true,
+          "5": true,
+          "10": true
+        },
+        "hybrid_rrf": {
+          "1": true,
+          "3": true,
+          "5": true,
+          "10": true
+        },
+        "hybrid_linear": {
+          "1": true,
+          "3": true,
+          "5": true,
+          "10": true
+        }
+      }
+    },
+    {
+      "query_id": "Q18",
+      "query": "Dynamo quorum formula W + R > N and Pigeonhole Principle proof",
+      "category": "keyword_exact",
+      "expected_chunks": [
+        "05_quorum_consistency#chunk-0"
+      ],
+      "ranks": {
+        "bm25": 1,
+        "dense": 1,
+        "hybrid_rrf": 1,
+        "hybrid_linear": 1
+      },
+      "hits_at_k": {
+        "bm25": {
+          "1": true,
+          "3": true,
+          "5": true,
+          "10": true
+        },
+        "dense": {
+          "1": true,
+          "3": true,
+          "5": true,
+          "10": true
+        },
+        "hybrid_rrf": {
+          "1": true,
+          "3": true,
+          "5": true,
+          "10": true
+        },
+        "hybrid_linear": {
+          "1": true,
+          "3": true,
+          "5": true,
+          "10": true
+        }
+      }
+    },
+    {
+      "query_id": "Q19",
+      "query": "Difference between synchronous and asynchronous read repair when version hashes mismatch",
+      "category": "hybrid_balanced",
+      "expected_chunks": [
+        "05_quorum_consistency#chunk-1"
+      ],
+      "ranks": {
+        "bm25": 1,
+        "dense": 1,
+        "hybrid_rrf": 1,
+        "hybrid_linear": 1
+      },
+      "hits_at_k": {
+        "bm25": {
+          "1": true,
+          "3": true,
+          "5": true,
+          "10": true
+        },
+        "dense": {
+          "1": true,
+          "3": true,
+          "5": true,
+          "10": true
+        },
+        "hybrid_rrf": {
+          "1": true,
+          "3": true,
+          "5": true,
+          "10": true
+        },
+        "hybrid_linear": {
+          "1": true,
+          "3": true,
+          "5": true,
+          "10": true
+        }
+      }
+    },
+    {
+      "query_id": "Q20",
+      "query": "How are mutations preserved when primary replicas are unreachable using temporary surrogate nodes?",
+      "category": "semantic_concept",
+      "expected_chunks": [
+        "05_quorum_consistency#chunk-2"
+      ],
+      "ranks": {
+        "bm25": 1,
+        "dense": 1,
+        "hybrid_rrf": 1,
+        "hybrid_linear": 1
+      },
+      "hits_at_k": {
+        "bm25": {
+          "1": true,
+          "3": true,
+          "5": true,
+          "10": true
+        },
+        "dense": {
+          "1": true,
+          "3": true,
+          "5": true,
+          "10": true
+        },
+        "hybrid_rrf": {
+          "1": true,
+          "3": true,
+          "5": true,
+          "10": true
+        },
+        "hybrid_linear": {
+          "1": true,
+          "3": true,
+          "5": true,
+          "10": true
+        }
+      }
+    },
+    {
+      "query_id": "Q21",
+      "query": "LWW Clock Inversion Trap and silent data loss caused by NTP drift",
+      "category": "keyword_exact",
+      "expected_chunks": [
+        "06_vector_clocks_crdts#chunk-1"
+      ],
+      "ranks": {
+        "bm25": 1,
+        "dense": 1,
+        "hybrid_rrf": 1,
+        "hybrid_linear": 1
+      },
+      "hits_at_k": {
+        "bm25": {
+          "1": true,
+          "3": true,
+          "5": true,
+          "10": true
+        },
+        "dense": {
+          "1": true,
+          "3": true,
+          "5": true,
+          "10": true
+        },
+        "hybrid_rrf": {
+          "1": true,
+          "3": true,
+          "5": true,
+          "10": true
+        },
+        "hybrid_linear": {
+          "1": true,
+          "3": true,
+          "5": true,
+          "10": true
+        }
+      }
+    },
+    {
+      "query_id": "Q22",
+      "query": "How to establish partial causality between concurrent updates without synchronized wall clocks",
+      "category": "semantic_concept",
+      "expected_chunks": [
+        "06_vector_clocks_crdts#chunk-0"
+      ],
+      "ranks": {
+        "bm25": 1,
+        "dense": 1,
+        "hybrid_rrf": 1,
+        "hybrid_linear": 1
+      },
+      "hits_at_k": {
+        "bm25": {
+          "1": true,
+          "3": true,
+          "5": true,
+          "10": true
+        },
+        "dense": {
+          "1": true,
+          "3": true,
+          "5": true,
+          "10": true
+        },
+        "hybrid_rrf": {
+          "1": true,
+          "3": true,
+          "5": true,
+          "10": true
+        },
+        "hybrid_linear": {
+          "1": true,
+          "3": true,
+          "5": true,
+          "10": true
+        }
+      }
+    },
+    {
+      "query_id": "Q23",
+      "query": "Observed-Remove Set OR-Set merge semantics with unique tags and tombstones",
+      "category": "hybrid_balanced",
+      "expected_chunks": [
+        "06_vector_clocks_crdts#chunk-2"
+      ],
+      "ranks": {
+        "bm25": 1,
+        "dense": 5,
+        "hybrid_rrf": 2,
+        "hybrid_linear": 1
+      },
+      "hits_at_k": {
+        "bm25": {
+          "1": true,
+          "3": true,
+          "5": true,
+          "10": true
+        },
+        "dense": {
+          "1": false,
+          "3": false,
+          "5": true,
+          "10": true
+        },
+        "hybrid_rrf": {
+          "1": false,
+          "3": true,
+          "5": true,
+          "10": true
+        },
+        "hybrid_linear": {
+          "1": true,
+          "3": true,
+          "5": true,
+          "10": true
+        }
+      }
+    },
+    {
+      "query_id": "Q24",
+      "query": "PN-Counter state-based CRDT monotonic increments and decrements",
+      "category": "keyword_exact",
+      "expected_chunks": [
+        "06_vector_clocks_crdts#chunk-2"
+      ],
+      "ranks": {
+        "bm25": 1,
+        "dense": 1,
+        "hybrid_rrf": 1,
+        "hybrid_linear": 1
+      },
+      "hits_at_k": {
+        "bm25": {
+          "1": true,
+          "3": true,
+          "5": true,
+          "10": true
+        },
+        "dense": {
+          "1": true,
+          "3": true,
+          "5": true,
+          "10": true
+        },
+        "hybrid_rrf": {
+          "1": true,
+          "3": true,
+          "5": true,
+          "10": true
+        },
+        "hybrid_linear": {
+          "1": true,
+          "3": true,
+          "5": true,
+          "10": true
+        }
+      }
+    },
+    {
+      "query_id": "Q25",
+      "query": "Little's Law L = lambda * W application to queue residency time and adaptive load shedding",
+      "category": "keyword_exact",
+      "expected_chunks": [
+        "07_rate_limiting_and_shedding#chunk-1"
+      ],
+      "ranks": {
+        "bm25": 1,
+        "dense": 1,
+        "hybrid_rrf": 1,
+        "hybrid_linear": 1
+      },
+      "hits_at_k": {
+        "bm25": {
+          "1": true,
+          "3": true,
+          "5": true,
+          "10": true
+        },
+        "dense": {
+          "1": true,
+          "3": true,
+          "5": true,
+          "10": true
+        },
+        "hybrid_rrf": {
+          "1": true,
+          "3": true,
+          "5": true,
+          "10": true
+        },
+        "hybrid_linear": {
+          "1": true,
+          "3": true,
+          "5": true,
+          "10": true
+        }
+      }
+    },
+    {
+      "query_id": "Q26",
+      "query": "Mitigating thundering herd retry storms with exponential backoff and randomized jitter",
+      "category": "semantic_concept",
+      "expected_chunks": [
+        "07_rate_limiting_and_shedding#chunk-2"
+      ],
+      "ranks": {
+        "bm25": 1,
+        "dense": 1,
+        "hybrid_rrf": 1,
+        "hybrid_linear": 1
+      },
+      "hits_at_k": {
+        "bm25": {
+          "1": true,
+          "3": true,
+          "5": true,
+          "10": true
+        },
+        "dense": {
+          "1": true,
+          "3": true,
+          "5": true,
+          "10": true
+        },
+        "hybrid_rrf": {
+          "1": true,
+          "3": true,
+          "5": true,
+          "10": true
+        },
+        "hybrid_linear": {
+          "1": true,
+          "3": true,
+          "5": true,
+          "10": true
+        }
+      }
+    },
+    {
+      "query_id": "Q27",
+      "query": "Token Bucket burst capacity B and refill rate R versus Leaky Bucket constant egress",
+      "category": "hybrid_balanced",
+      "expected_chunks": [
+        "07_rate_limiting_and_shedding#chunk-0"
+      ],
+      "ranks": {
+        "bm25": 1,
+        "dense": 1,
+        "hybrid_rrf": 1,
+        "hybrid_linear": 1
+      },
+      "hits_at_k": {
+        "bm25": {
+          "1": true,
+          "3": true,
+          "5": true,
+          "10": true
+        },
+        "dense": {
+          "1": true,
+          "3": true,
+          "5": true,
+          "10": true
+        },
+        "hybrid_rrf": {
+          "1": true,
+          "3": true,
+          "5": true,
+          "10": true
+        },
+        "hybrid_linear": {
+          "1": true,
+          "3": true,
+          "5": true,
+          "10": true
+        }
+      }
+    },
+    {
+      "query_id": "Q28",
+      "query": "Coalescing multiple concurrent transaction flushes with wal_sync_delay_ms group commit",
+      "category": "keyword_exact",
+      "expected_chunks": [
+        "08_wal_and_recovery#chunk-0"
+      ],
+      "ranks": {
+        "bm25": 1,
+        "dense": 1,
+        "hybrid_rrf": 1,
+        "hybrid_linear": 1
+      },
+      "hits_at_k": {
+        "bm25": {
+          "1": true,
+          "3": true,
+          "5": true,
+          "10": true
+        },
+        "dense": {
+          "1": true,
+          "3": true,
+          "5": true,
+          "10": true
+        },
+        "hybrid_rrf": {
+          "1": true,
+          "3": true,
+          "5": true,
+          "10": true
+        },
+        "hybrid_linear": {
+          "1": true,
+          "3": true,
+          "5": true,
+          "10": true
+        }
+      }
+    },
+    {
+      "query_id": "Q29",
+      "query": "How does the system ensure previously undone operations are not repeated if a secondary failure happens during rollback?",
+      "category": "semantic_concept",
+      "expected_chunks": [
+        "08_wal_and_recovery#chunk-2"
+      ],
+      "ranks": {
+        "bm25": 1,
+        "dense": 1,
+        "hybrid_rrf": 1,
+        "hybrid_linear": 1
+      },
+      "hits_at_k": {
+        "bm25": {
+          "1": true,
+          "3": true,
+          "5": true,
+          "10": true
+        },
+        "dense": {
+          "1": true,
+          "3": true,
+          "5": true,
+          "10": true
+        },
+        "hybrid_rrf": {
+          "1": true,
+          "3": true,
+          "5": true,
+          "10": true
+        },
+        "hybrid_linear": {
+          "1": true,
+          "3": true,
+          "5": true,
+          "10": true
+        }
+      }
+    },
+    {
+      "query_id": "Q30",
+      "query": "ARIES recovery protocol three phases: Analysis, Redo, and Undo with CLR records",
+      "category": "hybrid_balanced",
+      "expected_chunks": [
+        "08_wal_and_recovery#chunk-2"
+      ],
+      "ranks": {
+        "bm25": 1,
+        "dense": 1,
+        "hybrid_rrf": 1,
+        "hybrid_linear": 1
+      },
+      "hits_at_k": {
+        "bm25": {
+          "1": true,
+          "3": true,
+          "5": true,
+          "10": true
+        },
+        "dense": {
+          "1": true,
+          "3": true,
+          "5": true,
+          "10": true
+        },
+        "hybrid_rrf": {
+          "1": true,
+          "3": true,
+          "5": true,
+          "10": true
+        },
+        "hybrid_linear": {
+          "1": true,
+          "3": true,
+          "5": true,
+          "10": true
+        }
+      }
+    },
+    {
+      "query_id": "Q31",
+      "query": "Formula for optimal Bloom filter bits per key m and false positive probability p",
+      "category": "hybrid_balanced",
+      "expected_chunks": [
+        "09_bloom_filters_and_caching#chunk-0"
+      ],
+      "ranks": {
+        "bm25": 1,
+        "dense": 1,
+        "hybrid_rrf": 1,
+        "hybrid_linear": 1
+      },
+      "hits_at_k": {
+        "bm25": {
+          "1": true,
+          "3": true,
+          "5": true,
+          "10": true
+        },
+        "dense": {
+          "1": true,
+          "3": true,
+          "5": true,
+          "10": true
+        },
+        "hybrid_rrf": {
+          "1": true,
+          "3": true,
+          "5": true,
+          "10": true
+        },
+        "hybrid_linear": {
+          "1": true,
+          "3": true,
+          "5": true,
+          "10": true
+        }
+      }
+    },
+    {
+      "query_id": "Q32",
+      "query": "Why use 2Q and ARC caching algorithms instead of naive LRU for storage engines?",
+      "category": "semantic_concept",
+      "expected_chunks": [
+        "09_bloom_filters_and_caching#chunk-2"
+      ],
+      "ranks": {
+        "bm25": 1,
+        "dense": 1,
+        "hybrid_rrf": 1,
+        "hybrid_linear": 1
+      },
+      "hits_at_k": {
+        "bm25": {
+          "1": true,
+          "3": true,
+          "5": true,
+          "10": true
+        },
+        "dense": {
+          "1": true,
+          "3": true,
+          "5": true,
+          "10": true
+        },
+        "hybrid_rrf": {
+          "1": true,
+          "3": true,
+          "5": true,
+          "10": true
+        },
+        "hybrid_linear": {
+          "1": true,
+          "3": true,
+          "5": true,
+          "10": true
+        }
+      }
+    },
+    {
+      "query_id": "Q33",
+      "query": "Commit Wait Rule delaying transaction visibility by 2 * epsilon for external consistency",
+      "category": "hybrid_balanced",
+      "expected_chunks": [
+        "10_spanner_truetime#chunk-1"
+      ],
+      "ranks": {
+        "bm25": 1,
+        "dense": 1,
+        "hybrid_rrf": 1,
+        "hybrid_linear": 1
+      },
+      "hits_at_k": {
+        "bm25": {
+          "1": true,
+          "3": true,
+          "5": true,
+          "10": true
+        },
+        "dense": {
+          "1": true,
+          "3": true,
+          "5": true,
+          "10": true
+        },
+        "hybrid_rrf": {
+          "1": true,
+          "3": true,
+          "5": true,
+          "10": true
+        },
+        "hybrid_linear": {
+          "1": true,
+          "3": true,
+          "5": true,
+          "10": true
+        }
+      }
+    },
+    {
+      "query_id": "Q34",
+      "query": "ERR_CLOCK_UNCERTAINTY_EXCEEDED when TrueTime drift exceeds threshold",
+      "category": "keyword_exact",
+      "expected_chunks": [
+        "10_spanner_truetime#chunk-2"
+      ],
+      "ranks": {
+        "bm25": 1,
+        "dense": 1,
+        "hybrid_rrf": 1,
+        "hybrid_linear": 1
+      },
+      "hits_at_k": {
+        "bm25": {
+          "1": true,
+          "3": true,
+          "5": true,
+          "10": true
+        },
+        "dense": {
+          "1": true,
+          "3": true,
+          "5": true,
+          "10": true
+        },
+        "hybrid_rrf": {
+          "1": true,
+          "3": true,
+          "5": true,
+          "10": true
+        },
+        "hybrid_linear": {
+          "1": true,
+          "3": true,
+          "5": true,
+          "10": true
+        }
+      }
+    },
+    {
+      "query_id": "Q35",
+      "query": "Virtual nodes vnodes_per_node on MurmurHash3 token ring to prevent uneven distribution",
+      "category": "hybrid_balanced",
+      "expected_chunks": [
+        "11_sharding_and_rebalancing#chunk-0"
+      ],
+      "ranks": {
+        "bm25": 1,
+        "dense": 1,
+        "hybrid_rrf": 1,
+        "hybrid_linear": 1
+      },
+      "hits_at_k": {
+        "bm25": {
+          "1": true,
+          "3": true,
+          "5": true,
+          "10": true
+        },
+        "dense": {
+          "1": true,
+          "3": true,
+          "5": true,
+          "10": true
+        },
+        "hybrid_rrf": {
+          "1": true,
+          "3": true,
+          "5": true,
+          "10": true
+        },
+        "hybrid_linear": {
+          "1": true,
+          "3": true,
+          "5": true,
+          "10": true
+        }
+      }
+    },
+    {
+      "query_id": "Q36",
+      "query": "W3C TraceContext traceparent 4-part structure and tail-based sampling triggers for latency spikes",
+      "category": "hybrid_balanced",
+      "expected_chunks": [
+        "12_distributed_tracing#chunk-0",
+        "12_distributed_tracing#chunk-1"
+      ],
+      "ranks": {
+        "bm25": 1,
+        "dense": 1,
+        "hybrid_rrf": 1,
+        "hybrid_linear": 1
+      },
+      "hits_at_k": {
+        "bm25": {
+          "1": true,
+          "3": true,
+          "5": true,
+          "10": true
+        },
+        "dense": {
+          "1": true,
+          "3": true,
+          "5": true,
+          "10": true
+        },
+        "hybrid_rrf": {
+          "1": true,
+          "3": true,
+          "5": true,
+          "10": true
+        },
+        "hybrid_linear": {
+          "1": true,
+          "3": true,
+          "5": true,
+          "10": true
+        }
+      }
+    }
+  ],
+  "summary_markdown": "# 📊 Local-First RAG Quality Measurement Benchmark\n\n**Benchmark Dataset:** 36 curated test queries across 42 technical specification chunks.\n**Local Embedding Model:** `sentence-transformers/all-MiniLM-L6-v2` (Local inference)\n**Keyword Engine:** Okapi BM25 (`rank-bm25`)\n\n### Primary Retrieval Performance (Recall@k & Ranking Metrics)\n\n| Search Mode            | Recall@1   | Recall@3   | Recall@5   | Recall@10   |   MRR |   MAP |   NDCG@5 |   P50 Latency (ms) |\n|------------------------|------------|------------|------------|-------------|-------|-------|----------|--------------------|\n| BM25 (Keyword Only)    | 95.8%      | 100.0%     | 100.0%     | 100.0%      | 0.986 | 0.986 |    0.99  |               0.08 |\n| Dense Embeddings Only  | 87.5%      | 97.2%      | 100.0%     | 100.0%      | 0.927 | 0.927 |    0.945 |               3.26 |\n| Hybrid (RRF, k=60)     | 90.3%      | 100.0%     | 100.0%     | 100.0%      | 0.954 | 0.954 |    0.966 |               3.05 |\n| Hybrid (Linear, α=0.5) | 95.8%      | 100.0%     | 100.0%     | 100.0%      | 0.981 | 0.981 |    0.986 |               3.03 |\n\n### Performance Breakdown by Query Archetype (Recall@5)\n\n| Search Mode            | Keyword Exact (R@5)   | Semantic Concept (R@5)   | Hybrid Balanced (R@5)   |\n|------------------------|-----------------------|--------------------------|-------------------------|\n| BM25 (Keyword Only)    | 100.0%                | 100.0%                   | 100.0%                  |\n| Dense Embeddings Only  | 100.0%                | 100.0%                   | 100.0%                  |\n| Hybrid (RRF, k=60)     | 100.0%                | 100.0%                   | 100.0%                  |\n| Hybrid (Linear, α=0.5) | 100.0%                | 100.0%                   | 100.0%                  |\n"
+}

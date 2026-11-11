@@ -1,0 +1,254 @@
+[
+  {
+    "query_id": "Q01",
+    "query": "What are the configuration bounds for ELECTION_TIMEOUT_MIN_MS and HEARTBEAT_INTERVAL_MS in Raft?",
+    "category": "keyword_exact",
+    "expected_chunks": ["01_raft_consensus#chunk-1"],
+    "rationale": "Direct lookup of specific configuration parameter names (HEARTBEAT_INTERVAL_MS, ELECTION_TIMEOUT_MIN_MS). BM25 handles exact tokens directly, while embeddings may diffuse the specific identifier tokens."
+  },
+  {
+    "query_id": "Q02",
+    "query": "How does the system ensure no two leaders get elected in the same term during a network split?",
+    "category": "semantic_concept",
+    "expected_chunks": ["01_raft_consensus#chunk-1"],
+    "rationale": "Conceptual query regarding split-brain prevention through strict majority quorums ((N/2)+1). Uses paraphrased wording with low exact token overlap with the section heading."
+  },
+  {
+    "query_id": "Q03",
+    "query": "AppendEntriesRPC follower nextIndex decrement on log mismatch",
+    "category": "keyword_exact",
+    "expected_chunks": ["01_raft_consensus#chunk-2"],
+    "rationale": "Exact RPC procedure name and variable decrement logic (AppendEntriesRPC, nextIndex, log mismatch). Tests keyword indexing of code identifiers."
+  },
+  {
+    "query_id": "Q04",
+    "query": "Safely updating cluster membership without risk of overlapping majorities using transitional configurations",
+    "category": "semantic_concept",
+    "expected_chunks": ["01_raft_consensus#chunk-4"],
+    "rationale": "Tests semantic retrieval for Joint Consensus two-phase cluster membership changes without relying on the exact phrase 'C_old,new'."
+  },
+  {
+    "query_id": "Q05",
+    "query": "LSM_MEMTABLE_STALL_THRESHOLD and LSM_MEMTABLE_STOP_THRESHOLD backpressure limits",
+    "category": "keyword_exact",
+    "expected_chunks": ["02_lsm_trees_storage#chunk-2"],
+    "rationale": "Precise threshold variable names for LSM write stall. Dense embeddings struggle to differentiate specific numeric constant identifiers; BM25 matches exactly."
+  },
+  {
+    "query_id": "Q06",
+    "query": "Why do deletions temporarily consume additional storage instead of reclaiming disk space immediately?",
+    "category": "semantic_concept",
+    "expected_chunks": ["02_lsm_trees_storage#chunk-4"],
+    "rationale": "Explains the tombstone mechanism and compaction lifecycle in LSM trees. High semantic inquiry where vocabulary mismatch makes BM25 less effective."
+  },
+  {
+    "query_id": "Q07",
+    "query": "Trade-offs between LeveledCompactionStrategy and SizeTieredCompactionStrategy regarding write amplification and space amplification",
+    "category": "hybrid_balanced",
+    "expected_chunks": ["02_lsm_trees_storage#chunk-3"],
+    "rationale": "Contains exact class names (LeveledCompactionStrategy, SizeTieredCompactionStrategy) alongside high-level algorithmic trade-off concepts. Ideal candidate for hybrid search."
+  },
+  {
+    "query_id": "Q08",
+    "query": "SkipList MemTable flush to Level 0 SSTable when memtable_size_mb is exceeded",
+    "category": "keyword_exact",
+    "expected_chunks": ["02_lsm_trees_storage#chunk-0"],
+    "rationale": "Contains technical keywords: SkipList, MemTable, memtable_size_mb, and SSTable."
+  },
+  {
+    "query_id": "Q09",
+    "query": "How does Presumed Abort optimize coordinator recovery in Two-Phase Commit?",
+    "category": "hybrid_balanced",
+    "expected_chunks": ["03_distributed_transactions#chunk-2"],
+    "rationale": "Combines the exact protocol name 'Presumed Abort' with the conceptual mechanics of coordinator failure and cohort inquiries."
+  },
+  {
+    "query_id": "Q10",
+    "query": "Preventing non-blocking reads while avoiding dirty reads using version chains and snapshot timestamps",
+    "category": "semantic_concept",
+    "expected_chunks": ["03_distributed_transactions#chunk-0"],
+    "rationale": "Describes MVCC and Snapshot Isolation without explicitly saying 'Multi-Version Concurrency Control'. Tests semantic embedding alignment."
+  },
+  {
+    "query_id": "Q11",
+    "query": "TXN_DEADLOCK_RESOLVER_KILL_YOUNGEST and Tarjan cycle-finding in Wait-For Graphs",
+    "category": "keyword_exact",
+    "expected_chunks": ["03_distributed_transactions#chunk-3"],
+    "rationale": "Specific heuristic identifier TXN_DEADLOCK_RESOLVER_KILL_YOUNGEST and graph algorithm name."
+  },
+  {
+    "query_id": "Q12",
+    "query": "Two-Phase Commit prepare phase LockTable intents and participant abort handling",
+    "category": "hybrid_balanced",
+    "expected_chunks": ["03_distributed_transactions#chunk-1"],
+    "rationale": "Balances 2PC phase terminology (LockTable, PREPARE) with transactional flow explanation."
+  },
+  {
+    "query_id": "Q13",
+    "query": "Indirect probing Ping-Req mechanism to suppress false-positive node death declarations",
+    "category": "hybrid_balanced",
+    "expected_chunks": ["04_gossip_and_failure_detection#chunk-1"],
+    "rationale": "Combines the specific protocol message 'Ping-Req' with the operational rationale of preventing false death reports under packet loss."
+  },
+  {
+    "query_id": "Q14",
+    "query": "How does the cluster adaptively detect dead nodes across unreliable WAN connections without fixed timeouts?",
+    "category": "semantic_concept",
+    "expected_chunks": ["04_gossip_and_failure_detection#chunk-3"],
+    "rationale": "Conceptual description of the Phi Accrual continuous failure detection algorithm."
+  },
+  {
+    "query_id": "Q15",
+    "query": "phi_accrual_threshold dynamic failure detection formula and heartbeat interval distribution",
+    "category": "keyword_exact",
+    "expected_chunks": ["04_gossip_and_failure_detection#chunk-3"],
+    "rationale": "Direct lookup of the phi_accrual_threshold parameter and mathematical probability distribution."
+  },
+  {
+    "query_id": "Q16",
+    "query": "SWIM gossip GOSSIP_SUSPECT_TIMEOUT_MS and node refutation using incarnation numbers",
+    "category": "keyword_exact",
+    "expected_chunks": ["04_gossip_and_failure_detection#chunk-2"],
+    "rationale": "Specific parameter name GOSSIP_SUSPECT_TIMEOUT_MS and incarnation sequence mechanism."
+  },
+  {
+    "query_id": "Q17",
+    "query": "Mathematical condition for strict linearizable consistency across replica sets",
+    "category": "semantic_concept",
+    "expected_chunks": ["05_quorum_consistency#chunk-0"],
+    "rationale": "Conceptual formulation of the read-write quorum intersection requirement without spelling out W + R > N."
+  },
+  {
+    "query_id": "Q18",
+    "query": "Dynamo quorum formula W + R > N and Pigeonhole Principle proof",
+    "category": "keyword_exact",
+    "expected_chunks": ["05_quorum_consistency#chunk-0"],
+    "rationale": "Tests retrieval on the exact mathematical formula W + R > N and Pigeonhole Principle."
+  },
+  {
+    "query_id": "Q19",
+    "query": "Difference between synchronous and asynchronous read repair when version hashes mismatch",
+    "category": "hybrid_balanced",
+    "expected_chunks": ["05_quorum_consistency#chunk-1"],
+    "rationale": "Examines read repair mechanisms, hash digest comparisons, and latency trade-offs between sync and async repair."
+  },
+  {
+    "query_id": "Q20",
+    "query": "How are mutations preserved when primary replicas are unreachable using temporary surrogate nodes?",
+    "category": "semantic_concept",
+    "expected_chunks": ["05_quorum_consistency#chunk-2"],
+    "rationale": "Conceptual query regarding sloppy quorums and hinted handoff without explicitly mentioning either term."
+  },
+  {
+    "query_id": "Q21",
+    "query": "LWW Clock Inversion Trap and silent data loss caused by NTP drift",
+    "category": "keyword_exact",
+    "expected_chunks": ["06_vector_clocks_crdts#chunk-1"],
+    "rationale": "Contains the exact coined term 'LWW Clock Inversion Trap' and NTP clock skew."
+  },
+  {
+    "query_id": "Q22",
+    "query": "How to establish partial causality between concurrent updates without synchronized wall clocks",
+    "category": "semantic_concept",
+    "expected_chunks": ["06_vector_clocks_crdts#chunk-0"],
+    "rationale": "Conceptual inquiry into vector clocks and Lamport partial orderings."
+  },
+  {
+    "query_id": "Q23",
+    "query": "Observed-Remove Set OR-Set merge semantics with unique tags and tombstones",
+    "category": "hybrid_balanced",
+    "expected_chunks": ["06_vector_clocks_crdts#chunk-2"],
+    "rationale": "Contains technical CRDT terms (OR-Set, Observed-Remove Set) and merge logic."
+  },
+  {
+    "query_id": "Q24",
+    "query": "PN-Counter state-based CRDT monotonic increments and decrements",
+    "category": "keyword_exact",
+    "expected_chunks": ["06_vector_clocks_crdts#chunk-2"],
+    "rationale": "Direct lookup for the PN-Counter data structure."
+  },
+  {
+    "query_id": "Q25",
+    "query": "Little's Law L = lambda * W application to queue residency time and adaptive load shedding",
+    "category": "keyword_exact",
+    "expected_chunks": ["07_rate_limiting_and_shedding#chunk-1"],
+    "rationale": "Exact formula L = lambda * W and parameter max_acceptable_queue_latency_ms."
+  },
+  {
+    "query_id": "Q26",
+    "query": "Mitigating thundering herd retry storms with exponential backoff and randomized jitter",
+    "category": "semantic_concept",
+    "expected_chunks": ["07_rate_limiting_and_shedding#chunk-2"],
+    "rationale": "Conceptual explanation of full jitter client retry behavior under overload."
+  },
+  {
+    "query_id": "Q27",
+    "query": "Token Bucket burst capacity B and refill rate R versus Leaky Bucket constant egress",
+    "category": "hybrid_balanced",
+    "expected_chunks": ["07_rate_limiting_and_shedding#chunk-0"],
+    "rationale": "Compares Token Bucket and Leaky Bucket traffic shaping models with capacity parameters."
+  },
+  {
+    "query_id": "Q28",
+    "query": "Coalescing multiple concurrent transaction flushes with wal_sync_delay_ms group commit",
+    "category": "keyword_exact",
+    "expected_chunks": ["08_wal_and_recovery#chunk-0"],
+    "rationale": "Exact configuration key wal_sync_delay_ms and group commit batching."
+  },
+  {
+    "query_id": "Q29",
+    "query": "How does the system ensure previously undone operations are not repeated if a secondary failure happens during rollback?",
+    "category": "semantic_concept",
+    "expected_chunks": ["08_wal_and_recovery#chunk-2"],
+    "rationale": "Conceptual query on Compensation Log Records (CLRs) and undo idempotency in ARIES."
+  },
+  {
+    "query_id": "Q30",
+    "query": "ARIES recovery protocol three phases: Analysis, Redo, and Undo with CLR records",
+    "category": "hybrid_balanced",
+    "expected_chunks": ["08_wal_and_recovery#chunk-2"],
+    "rationale": "Combines ARIES protocol name with the three lifecycle phases and CLR records."
+  },
+  {
+    "query_id": "Q31",
+    "query": "Formula for optimal Bloom filter bits per key m and false positive probability p",
+    "category": "hybrid_balanced",
+    "expected_chunks": ["09_bloom_filters_and_caching#chunk-0"],
+    "rationale": "Mathematical formulation and parameter bloom_filter_bits_per_key."
+  },
+  {
+    "query_id": "Q32",
+    "query": "Why use 2Q and ARC caching algorithms instead of naive LRU for storage engines?",
+    "category": "semantic_concept",
+    "expected_chunks": ["09_bloom_filters_and_caching#chunk-2"],
+    "rationale": "Conceptual rationale for scan-resistant and adaptive caching policies in block/row caches."
+  },
+  {
+    "query_id": "Q33",
+    "query": "Commit Wait Rule delaying transaction visibility by 2 * epsilon for external consistency",
+    "category": "hybrid_balanced",
+    "expected_chunks": ["10_spanner_truetime#chunk-1"],
+    "rationale": "TrueTime Commit Wait rule and 2 * epsilon delay for linearizability."
+  },
+  {
+    "query_id": "Q34",
+    "query": "ERR_CLOCK_UNCERTAINTY_EXCEEDED when TrueTime drift exceeds threshold",
+    "category": "keyword_exact",
+    "expected_chunks": ["10_spanner_truetime#chunk-2"],
+    "rationale": "Direct lookup for the error code ERR_CLOCK_UNCERTAINTY_EXCEEDED and MAX_TRUETIME_DRIFT_THRESHOLD_MS."
+  },
+  {
+    "query_id": "Q35",
+    "query": "Virtual nodes vnodes_per_node on MurmurHash3 token ring to prevent uneven distribution",
+    "category": "hybrid_balanced",
+    "expected_chunks": ["11_sharding_and_rebalancing#chunk-0"],
+    "rationale": "Virtual node token placement, MurmurHash3, and consistent hashing parameter vnodes_per_node."
+  },
+  {
+    "query_id": "Q36",
+    "query": "W3C TraceContext traceparent 4-part structure and tail-based sampling triggers for latency spikes",
+    "category": "hybrid_balanced",
+    "expected_chunks": ["12_distributed_tracing#chunk-0", "12_distributed_tracing#chunk-1"],
+    "rationale": "Multi-chunk query covering traceparent header formatting and tail-based latency triggers."
+  }
+]

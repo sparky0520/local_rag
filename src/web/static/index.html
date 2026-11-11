@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AetherRAG • Local-First RAG with Measured Quality</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+  <div class="app-layout">
+    <!-- Sidebar Navigation -->
+    <aside class="sidebar">
+      <div class="logo-area">
+        <div class="logo-badge">⚡ AetherRAG</div>
+        <p class="logo-sub">Local-First • Measured Quality</p>
+      </div>
+
+      <nav class="nav-links">
+        <button class="nav-btn active" data-tab="tab-benchmark">
+          <span class="icon">📊</span>
+          <span>Quality Benchmark</span>
+        </button>
+        <button class="nav-btn" data-tab="tab-playground">
+          <span class="icon">🔍</span>
+          <span>RAG Playground</span>
+        </button>
+        <button class="nav-btn" data-tab="tab-testset">
+          <span class="icon">🧪</span>
+          <span>Test Set (36 Queries)</span>
+        </button>
+        <button class="nav-btn" data-tab="tab-corpus">
+          <span class="icon">📚</span>
+          <span>Corpus & Chunks</span>
+        </button>
+      </nav>
+
+      <div class="sidebar-status">
+        <div class="status-item">
+          <span class="status-dot green"></span>
+          <span>Local Embeddings: MiniLM-L6</span>
+        </div>
+        <div class="status-item">
+          <span class="status-dot purple"></span>
+          <span>Hardware: Apple Silicon MPS</span>
+        </div>
+        <div class="status-item">
+          <span class="status-dot blue"></span>
+          <span>Keyword Engine: BM25Okapi</span>
+        </div>
+      </div>
+    </aside>
+
+    <!-- Main Content Area -->
+    <main class="main-content">
+      <!-- Header -->
+      <header class="top-header">
+        <div class="header-titles">
+          <h1 id="page-title">Retrieval Quality Measurement Dashboard</h1>
+          <p class="header-desc">Empirical Recall@k, MRR, and NDCG benchmarking across Keyword, Dense, and Hybrid Search.</p>
+        </div>
+        <div class="header-actions">
+          <button id="btn-run-bench" class="btn btn-primary">
+            <span class="btn-icon">⚡</span> Run Live Benchmark
+          </button>
+        </div>
+      </header>
+
+      <!-- TAB 1: BENCHMARK DASHBOARD -->
+      <section id="tab-benchmark" class="tab-pane active">
+        <!-- Metric Cards Grid -->
+        <div class="kpi-grid">
+          <div class="kpi-card highlight-card">
+            <div class="kpi-label">Hybrid Recall@5</div>
+            <div class="kpi-value" id="kpi-hybrid-r5">100.0%</div>
+            <div class="kpi-delta positive">Best overall coverage</div>
+          </div>
+          <div class="kpi-card">
+            <div class="kpi-label">BM25 Recall@1</div>
+            <div class="kpi-value" id="kpi-bm25-r1">95.8%</div>
+            <div class="kpi-sub">Exact keyword matching</div>
+          </div>
+          <div class="kpi-card">
+            <div class="kpi-label">Dense Embeddings Recall@1</div>
+            <div class="kpi-value" id="kpi-dense-r1">87.5%</div>
+            <div class="kpi-sub">Local vector search</div>
+          </div>
+          <div class="kpi-card">
+            <div class="kpi-label">Mean Reciprocal Rank (MRR)</div>
+            <div class="kpi-value" id="kpi-mrr">0.986</div>
+            <div class="kpi-sub">Hybrid Linear (α=0.5)</div>
+          </div>
+        </div>
+
+        <!-- Primary Benchmark Table -->
+        <div class="section-card">
+          <div class="card-header">
+            <h3>📈 Primary Retrieval Performance Table (Recall@k & Ranking)</h3>
+            <span class="badge badge-outline">36 Evaluation Queries • 42 Chunks</span>
+          </div>
+          <div class="table-container">
+            <table class="data-table" id="table-primary-metrics">
+              <thead>
+                <tr>
+                  <th>Search Mode</th>
+                  <th>Recall@1</th>
+                  <th>Recall@3</th>
+                  <th>Recall@5</th>
+                  <th>Recall@10</th>
+                  <th>MRR</th>
+                  <th>MAP</th>
+                  <th>NDCG@5</th>
+                  <th>P50 Latency</th>
+                </tr>
+              </thead>
+              <tbody id="tbody-primary-metrics">
+                <tr><td colspan="9" class="loading-cell">Loading benchmark metrics...</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- Archetype Comparison Bars & Visual Breakdown -->
+        <div class="grid-2col">
+          <div class="section-card">
+            <div class="card-header">
+              <h3>🎯 Recall@k Comparison Curves</h3>
+            </div>
+            <div class="card-body">
+              <div id="recall-bars-container" class="bars-container">
+                <!-- Dynamically populated -->
+              </div>
+            </div>
+          </div>
+
+          <div class="section-card">
+            <div class="card-header">
+              <h3>🔬 Breakdown by Query Archetype (Recall@5)</h3>
+            </div>
+            <div class="card-body">
+              <div id="archetype-breakdown-container">
+                <!-- Dynamically populated -->
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Per-Query Detailed Explorer -->
+        <div class="section-card">
+          <div class="card-header">
+            <h3>🔎 Per-Query Retrieval Rank Explorer (All 36 Queries)</h3>
+            <input type="text" id="query-filter-input" placeholder="Filter queries or categories..." class="search-input-sm">
+          </div>
+          <div class="table-container max-h-500">
+            <table class="data-table" id="table-query-details">
+              <thead>
+                <tr>
+                  <th>ID</th>
+                  <th>Query Text</th>
+                  <th>Archetype</th>
+                  <th>BM25 Rank</th>
+                  <th>Dense Rank</th>
+                  <th>Hybrid RRF</th>
+                  <th>Hybrid Linear</th>
+                  <th>Status</th>
+                </tr>
+              </thead>
+              <tbody id="tbody-query-details">
+                <tr><td colspan="8" class="loading-cell">Loading query details...</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <!-- TAB 2: RAG PLAYGROUND -->
+      <section id="tab-playground" class="tab-pane">
+        <div class="section-card">
+          <div class="playground-controls">
+            <div class="input-group full-width">
+              <label for="play-query">Ask a Question or Test a Query:</label>
+              <div class="search-bar-wrap">
+                <input type="text" id="play-query" class="main-search-input" placeholder="e.g. How does the SWIM gossip protocol handle suspected node failures?">
+                <button id="btn-play-ask" class="btn btn-primary">Generate RAG Answer</button>
+                <button id="btn-play-search" class="btn btn-secondary">Search Only</button>
+              </div>
+            </div>
+
+            <div class="controls-row">
+              <div class="control-item">
+                <label>Retrieval Mode:</label>
+                <select id="play-mode" class="select-control">
+                  <option value="hybrid_rrf">Hybrid Search (RRF, k=60)</option>
+                  <option value="hybrid_linear" selected>Hybrid Search (Linear Convex Combination)</option>
+                  <option value="dense">Dense Embeddings Only (SentenceTransformer)</option>
+                  <option value="bm25">BM25 Keyword Only (Okapi)</option>
+                </select>
+              </div>
+
+              <div class="control-item" id="alpha-control-item">
+                <label>Fusion Alpha (α): <span id="alpha-val-label">0.50</span></label>
+                <div class="slider-row">
+                  <span class="slider-hint">BM25 (0.0)</span>
+                  <input type="range" id="play-alpha" min="0.0" max="1.0" step="0.05" value="0.5">
+                  <span class="slider-hint">Dense (1.0)</span>
+                </div>
+              </div>
+
+              <div class="control-item">
+                <label>Top-K Chunks:</label>
+                <select id="play-topk" class="select-control">
+                  <option value="3">Top 3</option>
+                  <option value="5" selected>Top 5</option>
+                  <option value="8">Top 8</option>
+                </select>
+              </div>
+            </div>
+
+            <!-- Quick sample query chips -->
+            <div class="sample-queries">
+              <span class="chips-label">Sample Test Queries:</span>
+              <button class="chip-btn" data-query="ELECTION_TIMEOUT_MIN_MS and HEARTBEAT_INTERVAL_MS">Exact Config</button>
+              <button class="chip-btn" data-query="Why do deletions temporarily consume additional storage instead of reclaiming disk space immediately?">Semantic Concept</button>
+              <button class="chip-btn" data-query="Dynamo quorum formula W + R > N and Pigeonhole Principle proof">Formula Math</button>
+              <button class="chip-btn" data-query="How does Presumed Abort optimize coordinator recovery in Two-Phase Commit?">Hybrid 2PC</button>
+              <button class="chip-btn" data-query="LWW Clock Inversion Trap and silent data loss caused by NTP drift">Clock Inversion</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Answer Panel -->
+        <div id="play-answer-panel" class="section-card hidden">
+          <div class="card-header">
+            <h3>🤖 Grounded RAG Answer Synthesis</h3>
+            <div class="header-badges">
+              <span id="answer-mode-badge" class="badge badge-purple">Hybrid Linear</span>
+              <span id="answer-latency-badge" class="badge badge-gray">85 ms</span>
+            </div>
+          </div>
+          <div class="card-body">
+            <div id="answer-markdown-content" class="prose-content"></div>
+          </div>
+        </div>
+
+        <!-- Retrieved Chunks Inspector -->
+        <div id="play-chunks-panel" class="section-card hidden">
+          <div class="card-header">
+            <h3>📑 Retrieved Context Chunks & Rank Signals</h3>
+            <span id="chunks-count-badge" class="badge badge-outline">5 chunks retrieved</span>
+          </div>
+          <div class="card-body" id="retrieved-chunks-list">
+            <!-- Dynamically populated -->
+          </div>
+        </div>
+      </section>
+
+      <!-- TAB 3: TEST SET INSPECTOR -->
+      <section id="tab-testset" class="tab-pane">
+        <div class="section-card">
+          <div class="card-header">
+            <h3>🧪 The Hand-Crafted Evaluation Test Set (36 Queries)</h3>
+            <span class="badge badge-primary">Curated Ground Truth</span>
+          </div>
+          <div class="card-body">
+            <p class="desc-text">
+              To evaluate local RAG with rigor, this benchmark features a curated test suite of 36 distinct queries covering 4 key archetypes: Exact Keyword, Paraphrased Semantic Concepts, Hybrid Balanced, and Mathematical/Algorithmic. Each query has human-verified ground-truth target chunk IDs.
+            </p>
+            <div class="table-container max-h-600">
+              <table class="data-table">
+                <thead>
+                  <tr>
+                    <th>ID</th>
+                    <th>Category</th>
+                    <th>Query</th>
+                    <th>Expected Chunk(s)</th>
+                    <th>Rationale & Difficulty</th>
+                  </tr>
+                </thead>
+                <tbody id="tbody-testset-full">
+                  <tr><td colspan="5" class="loading-cell">Loading test set...</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- TAB 4: CORPUS INSPECTOR -->
+      <section id="tab-corpus" class="tab-pane">
+        <div class="section-card">
+          <div class="card-header">
+            <h3>📚 Document Corpus & Chunk Explorer</h3>
+            <span class="badge badge-outline" id="corpus-stats-badge">12 Documents • 42 Chunks</span>
+          </div>
+          <div class="card-body">
+            <p class="desc-text">
+              The reference technical specification covers distributed systems consensus, LSM storage engines, 2PC, gossip, quorum consistency, vector clocks, rate limiting, WAL recovery, Bloom filters, Spanner TrueTime, sharding, and distributed tracing.
+            </p>
+            <div id="corpus-chunks-container" class="corpus-grid">
+              <!-- Dynamically populated -->
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script src="/static/app.js"></script>
+</body>
+</html>
