@@ -14,3 +14,4 @@ When servicing a quorum read with $R > 1$, the coordinating node requests full d
 
 ## Sloppy Quorums and Hinted Handoff
 Under severe network partitioning where fewer than $W$ designated primary replicas are reachable, AetherDB can be configured to degrade into a **Sloppy Quorum** mode if `allow_sloppy_quorum = true`. Instead of rejecting the write outright, the coordinator routes the write to temporary surrogate nodes outside the standard replica set. The surrogate node accepts the record and writes it into a dedicated local storage table known as a **Hinted Handoff** buffer. Each hinted handoff entry stores the original destination node ID, target key, and value. Background worker threads continuously probe the partitioned node; once connectivity is restored, all accumulated hints are replayed to the primary replica and cleared.
+

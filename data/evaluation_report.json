@@ -1,5 +1,5 @@
 {
-  "timestamp": 1794409280.479659,
+  "timestamp": 1794423139.4390872,
   "total_queries": 36,
   "corpus_chunks": 42,
   "k_values": [
@@ -32,10 +32,10 @@
         "5": 0.9897480487103183,
         "10": 0.9897480487103183
       },
-      "latency_ms_mean": 0.08377313911801644,
-      "latency_ms_p50": 0.08191650158551056,
-      "latency_ms_p95": 0.1111347501137061,
-      "latency_ms_p99": 0.1553284990222891,
+      "latency_ms_mean": 0.07378238893175472,
+      "latency_ms_p50": 0.07185400136222597,
+      "latency_ms_p95": 0.09478099855186883,
+      "latency_ms_p99": 0.13337270083866307,
       "category_recall_at_5": {
         "keyword_exact": 1.0,
         "semantic_concept": 1.0,
@@ -65,10 +65,10 @@
         "5": 0.9449384044668333,
         "10": 0.9449384044668333
       },
-      "latency_ms_mean": 5.752291749963155,
-      "latency_ms_p50": 3.261479499997222,
-      "latency_ms_p95": 6.737041498126928,
-      "latency_ms_p99": 53.03950219749812,
+      "latency_ms_mean": 6.078130777900191,
+      "latency_ms_p50": 3.602771001169458,
+      "latency_ms_p95": 7.472312498975953,
+      "latency_ms_p99": 51.52082104850696,
       "category_recall_at_5": {
         "keyword_exact": 1.0,
         "semantic_concept": 1.0,
@@ -98,10 +98,10 @@
         "5": 0.9656072085317476,
         "10": 0.9656072085317476
       },
-      "latency_ms_mean": 3.0573218051965037,
-      "latency_ms_p50": 3.0508124982588924,
-      "latency_ms_p95": 3.1868752503214637,
-      "latency_ms_p99": 3.273883548899903,
+      "latency_ms_mean": 3.0255903056968236,
+      "latency_ms_p50": 3.0404794997593854,
+      "latency_ms_p95": 3.0797810013609705,
+      "latency_ms_p99": 3.093100000114646,
       "category_recall_at_5": {
         "keyword_exact": 1.0,
         "semantic_concept": 1.0,
@@ -131,10 +131,43 @@
         "5": 0.9861111111111112,
         "10": 0.9861111111111112
       },
-      "latency_ms_mean": 3.0564617499193343,
-      "latency_ms_p50": 3.034604000276886,
-      "latency_ms_p95": 3.2180204998439876,
-      "latency_ms_p99": 3.2540540498303017,
+      "latency_ms_mean": 3.0319490556899433,
+      "latency_ms_p50": 3.040000001419685,
+      "latency_ms_p95": 3.1190937506835326,
+      "latency_ms_p99": 3.2201266496485914,
+      "category_recall_at_5": {
+        "keyword_exact": 1.0,
+        "semantic_concept": 1.0,
+        "hybrid_balanced": 1.0
+      }
+    },
+    "hybrid_rerank": {
+      "mode": "hybrid_rerank",
+      "display_name": "Hybrid + Cross-Encoder Rerank",
+      "recall_at_k": {
+        "1": 0.9583333333333334,
+        "3": 1.0,
+        "5": 1.0,
+        "10": 1.0
+      },
+      "precision_at_k": {
+        "1": 0.9722222222222222,
+        "3": 0.3425925925925926,
+        "5": 0.2055555555555556,
+        "10": 0.1027777777777778
+      },
+      "mrr": 0.9814814814814814,
+      "map_score": 0.9814814814814814,
+      "ndcg_at_k": {
+        "1": 0.9722222222222222,
+        "3": 0.9861111111111112,
+        "5": 0.9861111111111112,
+        "10": 0.9861111111111112
+      },
+      "latency_ms_mean": 147.14810866664467,
+      "latency_ms_p50": 70.483666500877,
+      "latency_ms_p95": 126.55634399925475,
+      "latency_ms_p99": 1827.030012499923,
       "category_recall_at_5": {
         "keyword_exact": 1.0,
         "semantic_concept": 1.0,
@@ -154,7 +187,8 @@
         "bm25": 1,
         "dense": 1,
         "hybrid_rrf": 1,
-        "hybrid_linear": 1
+        "hybrid_linear": 1,
+        "hybrid_rerank": 1
       },
       "hits_at_k": {
         "bm25": {
@@ -176,6 +210,12 @@
           "10": true
         },
         "hybrid_linear": {
+          "1": true,
+          "3": true,
+          "5": true,
+          "10": true
+        },
+        "hybrid_rerank": {
           "1": true,
           "3": true,
           "5": true,
@@ -194,7 +234,8 @@
         "bm25": 1,
         "dense": 1,
         "hybrid_rrf": 1,
-        "hybrid_linear": 1
+        "hybrid_linear": 1,
+        "hybrid_rerank": 1
       },
       "hits_at_k": {
         "bm25": {
@@ -216,6 +257,12 @@
           "10": true
         },
         "hybrid_linear": {
+          "1": true,
+          "3": true,
+          "5": true,
+          "10": true
+        },
+        "hybrid_rerank": {
           "1": true,
           "3": true,
           "5": true,
@@ -234,7 +281,8 @@
         "bm25": 1,
         "dense": 1,
         "hybrid_rrf": 1,
-        "hybrid_linear": 1
+        "hybrid_linear": 1,
+        "hybrid_rerank": 1
       },
       "hits_at_k": {
         "bm25": {
@@ -256,6 +304,12 @@
           "10": true
         },
         "hybrid_linear": {
+          "1": true,
+          "3": true,
+          "5": true,
+          "10": true
+        },
+        "hybrid_rerank": {
           "1": true,
           "3": true,
           "5": true,
@@ -274,7 +328,8 @@
         "bm25": 1,
         "dense": 3,
         "hybrid_rrf": 1,
-        "hybrid_linear": 1
+        "hybrid_linear": 1,
+        "hybrid_rerank": 1
       },
       "hits_at_k": {
         "bm25": {
@@ -296,6 +351,12 @@
           "10": true
         },
         "hybrid_linear": {
+          "1": true,
+          "3": true,
+          "5": true,
+          "10": true
+        },
+        "hybrid_rerank": {
           "1": true,
           "3": true,
           "5": true,
@@ -314,7 +375,8 @@
         "bm25": 1,
         "dense": 1,
         "hybrid_rrf": 1,
-        "hybrid_linear": 1
+        "hybrid_linear": 1,
+        "hybrid_rerank": 1
       },
       "hits_at_k": {
         "bm25": {
@@ -336,6 +398,12 @@
           "10": true
         },
         "hybrid_linear": {
+          "1": true,
+          "3": true,
+          "5": true,
+          "10": true
+        },
+        "hybrid_rerank": {
           "1": true,
           "3": true,
           "5": true,
@@ -354,7 +422,8 @@
         "bm25": 1,
         "dense": 1,
         "hybrid_rrf": 1,
-        "hybrid_linear": 1
+        "hybrid_linear": 1,
+        "hybrid_rerank": 1
       },
       "hits_at_k": {
         "bm25": {
@@ -376,6 +445,12 @@
           "10": true
         },
         "hybrid_linear": {
+          "1": true,
+          "3": true,
+          "5": true,
+          "10": true
+        },
+        "hybrid_rerank": {
           "1": true,
           "3": true,
           "5": true,
@@ -394,7 +469,8 @@
         "bm25": 1,
         "dense": 1,
         "hybrid_rrf": 1,
-        "hybrid_linear": 1
+        "hybrid_linear": 1,
+        "hybrid_rerank": 1
       },
       "hits_at_k": {
         "bm25": {
@@ -416,6 +492,12 @@
           "10": true
         },
         "hybrid_linear": {
+          "1": true,
+          "3": true,
+          "5": true,
+          "10": true
+        },
+        "hybrid_rerank": {
           "1": true,
           "3": true,
           "5": true,
@@ -434,7 +516,8 @@
         "bm25": 1,
         "dense": 1,
         "hybrid_rrf": 1,
-        "hybrid_linear": 1
+        "hybrid_linear": 1,
+        "hybrid_rerank": 1
       },
       "hits_at_k": {
         "bm25": {
@@ -456,6 +539,12 @@
           "10": true
         },
         "hybrid_linear": {
+          "1": true,
+          "3": true,
+          "5": true,
+          "10": true
+        },
+        "hybrid_rerank": {
           "1": true,
           "3": true,
           "5": true,
@@ -474,7 +563,8 @@
         "bm25": 1,
         "dense": 2,
         "hybrid_rrf": 2,
-        "hybrid_linear": 1
+        "hybrid_linear": 1,
+        "hybrid_rerank": 1
       },
       "hits_at_k": {
         "bm25": {
@@ -496,6 +586,12 @@
           "10": true
         },
         "hybrid_linear": {
+          "1": true,
+          "3": true,
+          "5": true,
+          "10": true
+        },
+        "hybrid_rerank": {
           "1": true,
           "3": true,
           "5": true,
@@ -514,7 +610,8 @@
         "bm25": 1,
         "dense": 1,
         "hybrid_rrf": 1,
-        "hybrid_linear": 1
+        "hybrid_linear": 1,
+        "hybrid_rerank": 1
       },
       "hits_at_k": {
         "bm25": {
@@ -536,6 +633,12 @@
           "10": true
         },
         "hybrid_linear": {
+          "1": true,
+          "3": true,
+          "5": true,
+          "10": true
+        },
+        "hybrid_rerank": {
           "1": true,
           "3": true,
           "5": true,
@@ -554,7 +657,8 @@
         "bm25": 1,
         "dense": 1,
         "hybrid_rrf": 1,
-        "hybrid_linear": 1
+        "hybrid_linear": 1,
+        "hybrid_rerank": 1
       },
       "hits_at_k": {
         "bm25": {
@@ -576,6 +680,12 @@
           "10": true
         },
         "hybrid_linear": {
+          "1": true,
+          "3": true,
+          "5": true,
+          "10": true
+        },
+        "hybrid_rerank": {
           "1": true,
           "3": true,
           "5": true,
@@ -594,7 +704,8 @@
         "bm25": 1,
         "dense": 1,
         "hybrid_rrf": 1,
-        "hybrid_linear": 1
+        "hybrid_linear": 1,
+        "hybrid_rerank": 1
       },
       "hits_at_k": {
         "bm25": {
@@ -616,6 +727,12 @@
           "10": true
         },
         "hybrid_linear": {
+          "1": true,
+          "3": true,
+          "5": true,
+          "10": true
+        },
+        "hybrid_rerank": {
           "1": true,
           "3": true,
           "5": true,
@@ -634,7 +751,8 @@
         "bm25": 1,
         "dense": 1,
         "hybrid_rrf": 1,
-        "hybrid_linear": 1
+        "hybrid_linear": 1,
+        "hybrid_rerank": 1
       },
       "hits_at_k": {
         "bm25": {
@@ -656,6 +774,12 @@
           "10": true
         },
         "hybrid_linear": {
+          "1": true,
+          "3": true,
+          "5": true,
+          "10": true
+        },
+        "hybrid_rerank": {
           "1": true,
           "3": true,
           "5": true,
@@ -674,7 +798,8 @@
         "bm25": 2,
         "dense": 3,
         "hybrid_rrf": 3,
-        "hybrid_linear": 3
+        "hybrid_linear": 3,
+        "hybrid_rerank": 3
       },
       "hits_at_k": {
         "bm25": {
@@ -696,6 +821,12 @@
           "10": true
         },
         "hybrid_linear": {
+          "1": false,
+          "3": true,
+          "5": true,
+          "10": true
+        },
+        "hybrid_rerank": {
           "1": false,
           "3": true,
           "5": true,
@@ -714,7 +845,8 @@
         "bm25": 1,
         "dense": 1,
         "hybrid_rrf": 1,
-        "hybrid_linear": 1
+        "hybrid_linear": 1,
+        "hybrid_rerank": 1
       },
       "hits_at_k": {
         "bm25": {
@@ -736,6 +868,12 @@
           "10": true
         },
         "hybrid_linear": {
+          "1": true,
+          "3": true,
+          "5": true,
+          "10": true
+        },
+        "hybrid_rerank": {
           "1": true,
           "3": true,
           "5": true,
@@ -754,7 +892,8 @@
         "bm25": 1,
         "dense": 1,
         "hybrid_rrf": 1,
-        "hybrid_linear": 1
+        "hybrid_linear": 1,
+        "hybrid_rerank": 1
       },
       "hits_at_k": {
         "bm25": {
@@ -776,6 +915,12 @@
           "10": true
         },
         "hybrid_linear": {
+          "1": true,
+          "3": true,
+          "5": true,
+          "10": true
+        },
+        "hybrid_rerank": {
           "1": true,
           "3": true,
           "5": true,
@@ -794,7 +939,8 @@
         "bm25": 1,
         "dense": 1,
         "hybrid_rrf": 1,
-        "hybrid_linear": 1
+        "hybrid_linear": 1,
+        "hybrid_rerank": 1
       },
       "hits_at_k": {
         "bm25": {
@@ -816,6 +962,12 @@
           "10": true
         },
         "hybrid_linear": {
+          "1": true,
+          "3": true,
+          "5": true,
+          "10": true
+        },
+        "hybrid_rerank": {
           "1": true,
           "3": true,
           "5": true,
@@ -834,7 +986,8 @@
         "bm25": 1,
         "dense": 1,
         "hybrid_rrf": 1,
-        "hybrid_linear": 1
+        "hybrid_linear": 1,
+        "hybrid_rerank": 1
       },
       "hits_at_k": {
         "bm25": {
@@ -856,6 +1009,12 @@
           "10": true
         },
         "hybrid_linear": {
+          "1": true,
+          "3": true,
+          "5": true,
+          "10": true
+        },
+        "hybrid_rerank": {
           "1": true,
           "3": true,
           "5": true,
@@ -874,7 +1033,8 @@
         "bm25": 1,
         "dense": 1,
         "hybrid_rrf": 1,
-        "hybrid_linear": 1
+        "hybrid_linear": 1,
+        "hybrid_rerank": 1
       },
       "hits_at_k": {
         "bm25": {
@@ -896,6 +1056,12 @@
           "10": true
         },
         "hybrid_linear": {
+          "1": true,
+          "3": true,
+          "5": true,
+          "10": true
+        },
+        "hybrid_rerank": {
           "1": true,
           "3": true,
           "5": true,
@@ -914,7 +1080,8 @@
         "bm25": 1,
         "dense": 1,
         "hybrid_rrf": 1,
-        "hybrid_linear": 1
+        "hybrid_linear": 1,
+        "hybrid_rerank": 1
       },
       "hits_at_k": {
         "bm25": {
@@ -936,6 +1103,12 @@
           "10": true
         },
         "hybrid_linear": {
+          "1": true,
+          "3": true,
+          "5": true,
+          "10": true
+        },
+        "hybrid_rerank": {
           "1": true,
           "3": true,
           "5": true,
@@ -954,7 +1127,8 @@
         "bm25": 1,
         "dense": 1,
         "hybrid_rrf": 1,
-        "hybrid_linear": 1
+        "hybrid_linear": 1,
+        "hybrid_rerank": 1
       },
       "hits_at_k": {
         "bm25": {
@@ -976,6 +1150,12 @@
           "10": true
         },
         "hybrid_linear": {
+          "1": true,
+          "3": true,
+          "5": true,
+          "10": true
+        },
+        "hybrid_rerank": {
           "1": true,
           "3": true,
           "5": true,
@@ -994,7 +1174,8 @@
         "bm25": 1,
         "dense": 1,
         "hybrid_rrf": 1,
-        "hybrid_linear": 1
+        "hybrid_linear": 1,
+        "hybrid_rerank": 1
       },
       "hits_at_k": {
         "bm25": {
@@ -1020,6 +1201,12 @@
           "3": true,
           "5": true,
           "10": true
+        },
+        "hybrid_rerank": {
+          "1": true,
+          "3": true,
+          "5": true,
+          "10": true
         }
       }
     },
@@ -1034,7 +1221,8 @@
         "bm25": 1,
         "dense": 5,
         "hybrid_rrf": 2,
-        "hybrid_linear": 1
+        "hybrid_linear": 1,
+        "hybrid_rerank": 1
       },
       "hits_at_k": {
         "bm25": {
@@ -1060,6 +1248,12 @@
           "3": true,
           "5": true,
           "10": true
+        },
+        "hybrid_rerank": {
+          "1": true,
+          "3": true,
+          "5": true,
+          "10": true
         }
       }
     },
@@ -1074,7 +1268,8 @@
         "bm25": 1,
         "dense": 1,
         "hybrid_rrf": 1,
-        "hybrid_linear": 1
+        "hybrid_linear": 1,
+        "hybrid_rerank": 1
       },
       "hits_at_k": {
         "bm25": {
@@ -1096,6 +1291,12 @@
           "10": true
         },
         "hybrid_linear": {
+          "1": true,
+          "3": true,
+          "5": true,
+          "10": true
+        },
+        "hybrid_rerank": {
           "1": true,
           "3": true,
           "5": true,
@@ -1114,7 +1315,8 @@
         "bm25": 1,
         "dense": 1,
         "hybrid_rrf": 1,
-        "hybrid_linear": 1
+        "hybrid_linear": 1,
+        "hybrid_rerank": 1
       },
       "hits_at_k": {
         "bm25": {
@@ -1136,6 +1338,12 @@
           "10": true
         },
         "hybrid_linear": {
+          "1": true,
+          "3": true,
+          "5": true,
+          "10": true
+        },
+        "hybrid_rerank": {
           "1": true,
           "3": true,
           "5": true,
@@ -1154,7 +1362,8 @@
         "bm25": 1,
         "dense": 1,
         "hybrid_rrf": 1,
-        "hybrid_linear": 1
+        "hybrid_linear": 1,
+        "hybrid_rerank": 1
       },
       "hits_at_k": {
         "bm25": {
@@ -1176,6 +1385,12 @@
           "10": true
         },
         "hybrid_linear": {
+          "1": true,
+          "3": true,
+          "5": true,
+          "10": true
+        },
+        "hybrid_rerank": {
           "1": true,
           "3": true,
           "5": true,
@@ -1194,7 +1409,8 @@
         "bm25": 1,
         "dense": 1,
         "hybrid_rrf": 1,
-        "hybrid_linear": 1
+        "hybrid_linear": 1,
+        "hybrid_rerank": 1
       },
       "hits_at_k": {
         "bm25": {
@@ -1216,6 +1432,12 @@
           "10": true
         },
         "hybrid_linear": {
+          "1": true,
+          "3": true,
+          "5": true,
+          "10": true
+        },
+        "hybrid_rerank": {
           "1": true,
           "3": true,
           "5": true,
@@ -1234,7 +1456,8 @@
         "bm25": 1,
         "dense": 1,
         "hybrid_rrf": 1,
-        "hybrid_linear": 1
+        "hybrid_linear": 1,
+        "hybrid_rerank": 1
       },
       "hits_at_k": {
         "bm25": {
@@ -1256,6 +1479,12 @@
           "10": true
         },
         "hybrid_linear": {
+          "1": true,
+          "3": true,
+          "5": true,
+          "10": true
+        },
+        "hybrid_rerank": {
           "1": true,
           "3": true,
           "5": true,
@@ -1274,7 +1503,8 @@
         "bm25": 1,
         "dense": 1,
         "hybrid_rrf": 1,
-        "hybrid_linear": 1
+        "hybrid_linear": 1,
+        "hybrid_rerank": 1
       },
       "hits_at_k": {
         "bm25": {
@@ -1296,6 +1526,12 @@
           "10": true
         },
         "hybrid_linear": {
+          "1": true,
+          "3": true,
+          "5": true,
+          "10": true
+        },
+        "hybrid_rerank": {
           "1": true,
           "3": true,
           "5": true,
@@ -1314,7 +1550,8 @@
         "bm25": 1,
         "dense": 1,
         "hybrid_rrf": 1,
-        "hybrid_linear": 1
+        "hybrid_linear": 1,
+        "hybrid_rerank": 1
       },
       "hits_at_k": {
         "bm25": {
@@ -1336,6 +1573,12 @@
           "10": true
         },
         "hybrid_linear": {
+          "1": true,
+          "3": true,
+          "5": true,
+          "10": true
+        },
+        "hybrid_rerank": {
           "1": true,
           "3": true,
           "5": true,
@@ -1354,7 +1597,8 @@
         "bm25": 1,
         "dense": 1,
         "hybrid_rrf": 1,
-        "hybrid_linear": 1
+        "hybrid_linear": 1,
+        "hybrid_rerank": 1
       },
       "hits_at_k": {
         "bm25": {
@@ -1376,6 +1620,12 @@
           "10": true
         },
         "hybrid_linear": {
+          "1": true,
+          "3": true,
+          "5": true,
+          "10": true
+        },
+        "hybrid_rerank": {
           "1": true,
           "3": true,
           "5": true,
@@ -1394,7 +1644,8 @@
         "bm25": 1,
         "dense": 1,
         "hybrid_rrf": 1,
-        "hybrid_linear": 1
+        "hybrid_linear": 1,
+        "hybrid_rerank": 1
       },
       "hits_at_k": {
         "bm25": {
@@ -1416,6 +1667,12 @@
           "10": true
         },
         "hybrid_linear": {
+          "1": true,
+          "3": true,
+          "5": true,
+          "10": true
+        },
+        "hybrid_rerank": {
           "1": true,
           "3": true,
           "5": true,
@@ -1434,7 +1691,8 @@
         "bm25": 1,
         "dense": 1,
         "hybrid_rrf": 1,
-        "hybrid_linear": 1
+        "hybrid_linear": 1,
+        "hybrid_rerank": 1
       },
       "hits_at_k": {
         "bm25": {
@@ -1456,6 +1714,12 @@
           "10": true
         },
         "hybrid_linear": {
+          "1": true,
+          "3": true,
+          "5": true,
+          "10": true
+        },
+        "hybrid_rerank": {
           "1": true,
           "3": true,
           "5": true,
@@ -1474,7 +1738,8 @@
         "bm25": 1,
         "dense": 1,
         "hybrid_rrf": 1,
-        "hybrid_linear": 1
+        "hybrid_linear": 1,
+        "hybrid_rerank": 1
       },
       "hits_at_k": {
         "bm25": {
@@ -1496,6 +1761,12 @@
           "10": true
         },
         "hybrid_linear": {
+          "1": true,
+          "3": true,
+          "5": true,
+          "10": true
+        },
+        "hybrid_rerank": {
           "1": true,
           "3": true,
           "5": true,
@@ -1514,7 +1785,8 @@
         "bm25": 1,
         "dense": 1,
         "hybrid_rrf": 1,
-        "hybrid_linear": 1
+        "hybrid_linear": 1,
+        "hybrid_rerank": 1
       },
       "hits_at_k": {
         "bm25": {
@@ -1536,6 +1808,12 @@
           "10": true
         },
         "hybrid_linear": {
+          "1": true,
+          "3": true,
+          "5": true,
+          "10": true
+        },
+        "hybrid_rerank": {
           "1": true,
           "3": true,
           "5": true,
@@ -1555,7 +1833,8 @@
         "bm25": 1,
         "dense": 1,
         "hybrid_rrf": 1,
-        "hybrid_linear": 1
+        "hybrid_linear": 1,
+        "hybrid_rerank": 1
       },
       "hits_at_k": {
         "bm25": {
@@ -1581,9 +1860,15 @@
           "3": true,
           "5": true,
           "10": true
+        },
+        "hybrid_rerank": {
+          "1": true,
+          "3": true,
+          "5": true,
+          "10": true
         }
       }
     }
   ],
-  "summary_markdown": "# 📊 Local-First RAG Quality Measurement Benchmark\n\n**Benchmark Dataset:** 36 curated test queries across 42 technical specification chunks.\n**Local Embedding Model:** `sentence-transformers/all-MiniLM-L6-v2` (Local inference)\n**Keyword Engine:** Okapi BM25 (`rank-bm25`)\n\n### Primary Retrieval Performance (Recall@k & Ranking Metrics)\n\n| Search Mode            | Recall@1   | Recall@3   | Recall@5   | Recall@10   |   MRR |   MAP |   NDCG@5 |   P50 Latency (ms) |\n|------------------------|------------|------------|------------|-------------|-------|-------|----------|--------------------|\n| BM25 (Keyword Only)    | 95.8%      | 100.0%     | 100.0%     | 100.0%      | 0.986 | 0.986 |    0.99  |               0.08 |\n| Dense Embeddings Only  | 87.5%      | 97.2%      | 100.0%     | 100.0%      | 0.927 | 0.927 |    0.945 |               3.26 |\n| Hybrid (RRF, k=60)     | 90.3%      | 100.0%     | 100.0%     | 100.0%      | 0.954 | 0.954 |    0.966 |               3.05 |\n| Hybrid (Linear, α=0.5) | 95.8%      | 100.0%     | 100.0%     | 100.0%      | 0.981 | 0.981 |    0.986 |               3.03 |\n\n### Performance Breakdown by Query Archetype (Recall@5)\n\n| Search Mode            | Keyword Exact (R@5)   | Semantic Concept (R@5)   | Hybrid Balanced (R@5)   |\n|------------------------|-----------------------|--------------------------|-------------------------|\n| BM25 (Keyword Only)    | 100.0%                | 100.0%                   | 100.0%                  |\n| Dense Embeddings Only  | 100.0%                | 100.0%                   | 100.0%                  |\n| Hybrid (RRF, k=60)     | 100.0%                | 100.0%                   | 100.0%                  |\n| Hybrid (Linear, α=0.5) | 100.0%                | 100.0%                   | 100.0%                  |\n"
+  "summary_markdown": "# 📊 Local-First RAG Quality Measurement Benchmark\n\n**Benchmark Dataset:** 36 curated test queries across 42 technical specification chunks.\n**Local Embedding Model:** `sentence-transformers/all-MiniLM-L6-v2` (Local inference)\n**Keyword Engine:** Okapi BM25 (`rank-bm25`)\n\n### Primary Retrieval Performance (Recall@k & Ranking Metrics)\n\n| Search Mode                   | Recall@1   | Recall@3   | Recall@5   | Recall@10   |   MRR |   MAP |   NDCG@5 |   P50 Latency (ms) |\n|-------------------------------|------------|------------|------------|-------------|-------|-------|----------|--------------------|\n| BM25 (Keyword Only)           | 95.8%      | 100.0%     | 100.0%     | 100.0%      | 0.986 | 0.986 |    0.99  |               0.07 |\n| Dense Embeddings Only         | 87.5%      | 97.2%      | 100.0%     | 100.0%      | 0.927 | 0.927 |    0.945 |               3.6  |\n| Hybrid (RRF, k=60)            | 90.3%      | 100.0%     | 100.0%     | 100.0%      | 0.954 | 0.954 |    0.966 |               3.04 |\n| Hybrid (Linear, α=0.5)        | 95.8%      | 100.0%     | 100.0%     | 100.0%      | 0.981 | 0.981 |    0.986 |               3.04 |\n| Hybrid + Cross-Encoder Rerank | 95.8%      | 100.0%     | 100.0%     | 100.0%      | 0.981 | 0.981 |    0.986 |              70.48 |\n\n### Performance Breakdown by Query Archetype (Recall@5)\n\n| Search Mode                   | Keyword Exact (R@5)   | Semantic Concept (R@5)   | Hybrid Balanced (R@5)   |\n|-------------------------------|-----------------------|--------------------------|-------------------------|\n| BM25 (Keyword Only)           | 100.0%                | 100.0%                   | 100.0%                  |\n| Dense Embeddings Only         | 100.0%                | 100.0%                   | 100.0%                  |\n| Hybrid (RRF, k=60)            | 100.0%                | 100.0%                   | 100.0%                  |\n| Hybrid (Linear, α=0.5)        | 100.0%                | 100.0%                   | 100.0%                  |\n| Hybrid + Cross-Encoder Rerank | 100.0%                | 100.0%                   | 100.0%                  |\n"
 }

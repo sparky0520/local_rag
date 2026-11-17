@@ -31,3 +31,4 @@ class Settings(BaseModel):
     port: int = 8000
 
 settings = Settings()
+

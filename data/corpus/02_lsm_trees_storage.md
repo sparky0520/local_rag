@@ -14,3 +14,4 @@ AetherDB supports two primary compaction strategies: `LeveledCompactionStrategy`
 
 ## Deletion Semantics and Tombstone Compaction
 In an LSM storage engine, record deletion is not executed as an in-place disk erasure. Instead, a deletion is recorded as a write operation containing a special marker known as a `Tombstone`. The tombstone masks older versions of the key residing in lower SSTable levels. Consequently, deleting records temporarily increases disk space consumption rather than freeing it. Disk space reclamation only occurs during background compaction when the tombstone and the shadowed obsolete data are merged and purged, provided the tombstone has aged beyond `tombstone_compaction_interval_seconds` (set to 86,400 seconds / 24 hours) to prevent resurrected data across distributed replicas.
+

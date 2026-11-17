@@ -4,6 +4,7 @@ import numpy as np
 from pydantic import BaseModel
 from src.vector_store import VectorStore, SearchResult
 from src.keyword_search import KeywordSearchEngine
+from src.reranker import CrossEncoderReranker
 from src.config import settings
 
 class HybridSearchResult(BaseModel):
@@ -162,12 +163,17 @@ class HybridSearchEngine:
         return results
 
     def search(self, query: str, top_k: int = 5, mode: str = "hybrid_rrf", alpha: Optional[float] = None) -> List[Any]:
-        """Unified search interface supporting dense, bm25, hybrid_rrf, hybrid_linear."""
+        """Unified search interface supporting dense, bm25, hybrid_rrf, hybrid_linear, and hybrid_rerank."""
         if mode == "dense":
             return self.vector_store.search(query, top_k=top_k)
         elif mode == "bm25":
             return self.keyword_engine.search(query, top_k=top_k)
         elif mode == "hybrid_linear":
             return self.search_linear(query, top_k=top_k, alpha=alpha)
+        elif mode == "hybrid_rerank":
+            candidates = self.search_linear(query, top_k=max(15, top_k * 2), alpha=alpha)
+            reranker = CrossEncoderReranker.get_instance()
+            return reranker.rerank(query, candidates, top_k=top_k)
         else: # default hybrid_rrf
             return self.search_rrf(query, top_k=top_k)
+

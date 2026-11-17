@@ -34,3 +34,4 @@ def test_evaluator_run():
     assert report.modes["hybrid_linear"].recall_at_k[5] >= 0.95
     assert report.modes["bm25"].recall_at_k[5] >= 0.90
     assert report.modes["dense"].recall_at_k[5] >= 0.85
+

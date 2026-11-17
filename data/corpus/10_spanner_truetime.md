@@ -15,3 +15,4 @@ To enforce this invariant without cross-region locks or coordinator handshakes, 
 
 ## TrueTime Anomaly Handling: Asymmetric Clock Drift
 If a datacenter experiences severe network jitter or GPS antenna failure, local oscillator drift increases $\epsilon$. If $\epsilon$ exceeds `MAX_TRUETIME_DRIFT_THRESHOLD_MS = 100`, the affected storage node enters an emergency read-only isolation mode `ERR_CLOCK_UNCERTAINTY_EXCEEDED` to prevent publishing corrupted or non-linearizable transaction commit timestamps.
+

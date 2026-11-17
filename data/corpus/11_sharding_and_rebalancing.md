@@ -12,3 +12,4 @@ When adding a new physical node to an existing cluster or decommissioning an obs
 2. **Dual-Write Phase**: Client write requests for the migrating range are routed concurrently to both the donor node and the recipient node.
 3. **Catch-Up Streaming**: The donor node streams historical SSTables and active MemTable snapshots to the recipient node using rate-limited background TCP streams capped by `migration_max_bandwidth_mb = 120`.
 4. **Cutover Atomic Switch**: Once the recipient node's replication lag falls below `migration_cutover_max_lag_ms = 50`, the coordinator updates the cluster routing table via Raft, donor nodes release the token ranges, and the recipient node officially assumes primary ownership.
+

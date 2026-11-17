@@ -18,3 +18,4 @@ Capturing 100% of telemetry traces in high-throughput clusters generating millio
 
 ## Baggage Items and Cross-Cutting Context
 In addition to the immutable traceparent header, AetherDB supports the `tracestate` and `baggage` headers. Baggage carries key-value pairs (such as `tenant_id`, `priority_tier`, or `client_datacenter`) across asynchronous thread transitions and network boundaries. Storage schedulers inspect baggage attributes to assign CPU and disk I/O priorities, granting highest priority to VIP tenants while throttling bulk background batch tasks.
+

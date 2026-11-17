@@ -14,3 +14,4 @@ An entry is deemed committed once it is successfully replicated onto a majority 
 
 ## Joint Consensus Configuration Membership Changes
 Dynamic cluster reconfiguration (adding or removing nodes) is executed via a two-phase Joint Consensus protocol. Rather than switching cluster configurations atomically—which risks overlapping majorities and split-brain—the Leader enters an intermediate transitional configuration `C_old,new`. While operating in `C_old,new`, log entries must achieve independent majority agreement from both the legacy configuration group `C_old` and the incoming configuration group `C_new`. Once the `C_old,new` entry commits, the Leader safely broadcasts the definitive configuration `C_new`.
+

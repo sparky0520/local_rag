@@ -14,3 +14,4 @@ To avoid allocating large contiguous memory buffers for multi-gigabyte SSTables,
 To accelerate data access paths, AetherDB implements a two-tier caching hierarchy:
 1. **Block Cache (LRU/2Q)**: Caches uncompressed 4 KB SSTable data blocks in memory. When multiple keys located in the same SSTable block are accessed in temporal proximity, only the initial read incurs disk I/O. AetherDB employs the 2Q eviction algorithm to prevent one-off sequential range scans from polluting the active working set cache.
 2. **Row Cache (ARC - Adaptive Replacement Cache)**: Caches fully deserialized, in-memory representations of individual hot key-value rows. Lookups hitting the Row Cache bypass SSTable block parsing, index traversal, and decompression entirely, achieving sub-microsecond query latencies.
+

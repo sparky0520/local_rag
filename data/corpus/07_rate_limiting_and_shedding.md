@@ -13,3 +13,4 @@ When client requests receive rate limit rejections or transient RPC timeouts, na
 $$\text{temp} = \min(T_{\text{max}}, T_{\text{base}} \times 2^i)$$
 $$\text{sleep\_duration} = \text{UniformRandom}(0, \text{temp})$$
 where $T_{\text{base}} = 50\text{ ms}$ and $T_{\text{max}} = 10000\text{ ms}$. Full jitter decorrelates retry pulses across thousands of concurrent clients, transforming synchronized retry spikes into a uniformly distributed, manageable background trickle.
+

@@ -13,3 +13,4 @@ The primary vulnerability of classical 2PC is the blocking coordinator failure s
 
 ## Distributed Deadlock Detection via Wait-For Graphs
 When concurrent transactions attempt to acquire conflicting row locks across different shards, circular dependencies can emerge, resulting in distributed deadlocks. AetherDB employs an asynchronous distributed Wait-For Graph (WFG) analyzer. Every shard periodically exports its local lock dependency edges `(T_holder -> T_waiter)` to a background deadlock detection worker. The analyzer aggregates edges into a global dependency digraph and executes Tarjan's cycle-finding algorithm. Upon detecting a directed cycle, the analyzer aborts the youngest transaction in the cycle using the `TXN_DEADLOCK_RESOLVER_KILL_YOUNGEST` heuristic, minimizing the cost of rolled-back computational work.
+

@@ -116,6 +116,7 @@ class RAGEvaluator:
             ("dense", "Dense Embeddings Only", {}),
             ("hybrid_rrf", "Hybrid (RRF, k=60)", {}),
             ("hybrid_linear", f"Hybrid (Linear, α={alpha_val})", {"alpha": alpha_val}),
+            ("hybrid_rerank", "Hybrid + Cross-Encoder Rerank", {"alpha": alpha_val}),
         ]
 
         mode_metrics: Dict[str, ModeMetrics] = {}
@@ -282,3 +283,4 @@ class RAGEvaluator:
 {cat_table_str}
 """
         return md
+

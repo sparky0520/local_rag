@@ -13,3 +13,4 @@ If indirect probing fails to elicit any response within `GOSSIP_SUSPECT_TIMEOUT_
 For high-performance inter-datacenter links, AetherDB supplements the gossip protocol with the Hayashibara Phi Accrual Failure Detector. Rather than rendering a binary alive/dead verdict, the detector continuously tracks the historical distribution of inter-arrival heartbeat intervals. By fitting an exponential or normal probability distribution over the recent sliding window of $N=1000$ heartbeat intervals, the detector computes a dynamic continuous metric $\Phi$:
 $$\Phi = -\log_{10}(P_{\text{later}}(t - t_{\text{last}}))$$
 where $P_{\text{later}}(t)$ represents the probability that a heartbeat will arrive more than $t$ time units after the previous heartbeat. The application triggers alert or failover actions when $\Phi$ crosses a configurable threshold: `phi_accrual_threshold = 8.0` for conservative failover or `phi_accrual_threshold = 12.0` for flaky WAN links.
+

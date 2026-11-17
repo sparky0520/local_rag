@@ -57,3 +57,11 @@ def test_hybrid_linear_search(pipeline):
     assert len(results) == 5
     assert results[0].chunk_id == "11_sharding_and_rebalancing#chunk-0"
     assert results[0].fusion_method == "linear"
+
+def test_hybrid_rerank_search(pipeline):
+    _, _, _, hybrid = pipeline
+    results = hybrid.search("Why do deletions temporarily consume additional storage in LSM trees?", mode="hybrid_rerank", top_k=3)
+    assert len(results) == 3
+    assert results[0].chunk_id == "02_lsm_trees_storage#chunk-4"
+    assert results[0].score > 0.5
+
